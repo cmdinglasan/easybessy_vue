@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+
+	.search-box {
+		background: #f1f3f4;
+	    border: 1px solid transparent;
+	    -webkit-border-radius: 8px;
+	    border-radius: 8px;
+	    margin-left: auto;
+	    margin-right: auto;
+	    max-width: 720px;
+	    position: relative;
+	    -webkit-transition: background 100ms ease-in,width 100ms ease-out;
+	    transition: background 100ms ease-in,width 100ms ease-out;
+	}
+
+}
+
+.modal-enter-active, .modal-leave-active,
+.show-enter-active, .show-leave-active,
+.cards-enter-active, .cards-leave-active {
+	transition: all ease-in-out .25s;
+}
+.modal-enter, .modal-leave-to /* .fade-leave-active below version 2.1.8 */ {
+	transform: scale(0);
+}
+.modal-leave, .modal-enter-to /* .fade-leave-active below version 2.1.8 */ {
+	transform: scale(1);
+}
+.show-enter, .show-leave-to {
+	opacity: 0;
+}
+.show-leave, .show-enter-to{
+	opacity: 1;
+}
+.cards-enter, .cards-leave-to {
+	opacity: 0;
+	margin-top: 2.5rem;
+}
+.cards-leave, .cards-enter-to{
+	opacity: 1;
+	margin-top: 0;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
