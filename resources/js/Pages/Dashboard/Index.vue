@@ -1,25 +1,24 @@
 <template>
-	<dash-layout>
+    <dash-layout>
+        <!-- Header -->
+        <template #header>
+            <h1 class="text-center">Overview</h1>
+        </template>
 
-		<!-- Header -->
-		<template #header>
-			Overview
-		</template>
-
-		<template #content>
-			Test
-		</template>
-
-	</dash-layout>
+        <template #content>
+             <Chart />
+        </template>
+    </dash-layout>
 </template>
 
 <script>
-    import DashLayout from '@/Layouts/DashLayout'
+import DashLayout from "@/Layouts/DashLayout";
+import Chart from '@/Chart/Chart'
 
-    export default {
-        components: {
-            DashLayout,
-        },
+export default {
+    components: {
+        DashLayout,
+        Chart
     }
-	
+};
 </script>

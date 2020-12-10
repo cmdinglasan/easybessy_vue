@@ -215,7 +215,7 @@
 	            currentUser: [],
 	            user: null,
 	            accountModal: false,
-	            sidebar: true,
+	            sidebar: false,
         	}
         },
         mounted() {
