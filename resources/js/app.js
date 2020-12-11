@@ -14,7 +14,8 @@ import PortalVue from 'portal-vue';
 
 Vue.mixin({ 
 	methods: { 
-		route
+		route,
+        asset: asset
 	} 
 });
 Vue.use(InertiaApp);

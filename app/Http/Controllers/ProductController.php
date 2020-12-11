@@ -12,13 +12,13 @@ class ProductController extends Controller
     
     public function __invoke(Request $request)
     {
-    	return Product::all();
+    	return Product::orderBy('name')->get();
     }
 
     public function index(Request $request)
     {
-    	$products = Product::all();
-    	$productCategories = ProductCategory::all();
+    	$products = Product::orderBy('name')->get();
+    	$productCategories = ProductCategory::orderBy('name')->get();
 
     	return Inertia::render('Dashboard/Inventory/Products/Index',[
     		'products' => $products,
@@ -28,7 +28,7 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
-		$products = Product::all();
+		$products = Product::orderBy('name')->get();
 
     	$request->validate([
     		'name' => 'required',

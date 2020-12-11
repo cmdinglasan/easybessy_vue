@@ -1,5 +1,5 @@
 <template>
-	<div class="fixed h-screen p-4 w-full md:w-1/2 lg:w-1/4 top-0 bg-blue-500 transition-all duration-200" :class="active == true ? 'right-0' : '-right-full'">
+	<div class="fixed h-screen p-4 w-full md:w-1/2 lg:w-1/4 top-0 bg-blue-500 transition-all duration-200 shadow-md z-20" :class="active == true ? 'right-0' : '-right-full'">
 		<div class="container mx-auto relative py-4">
 			<div class="action-bar">
 				<button class="h-10 w-10 text-white py-2" @click="changeActive">

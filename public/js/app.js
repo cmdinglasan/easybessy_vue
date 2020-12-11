@@ -5412,6 +5412,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -5423,15 +5433,14 @@ __webpack_require__.r(__webpack_exports__);
       currentUser: [],
       user: null,
       accountModal: false,
-      sidebar: true
+      sidebar: false
     };
   },
   mounted: function mounted() {
     var _this = this;
 
-    axios.get('api/user').then(function (response) {
+    axios.get('/api/user').then(function (response) {
       _this.currentUser = response.data;
-      console.log(_this.currentUser);
     })["catch"](function (error) {
       console.log(error);
     });
@@ -5805,6 +5814,51 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard/Branches/Index.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Dashboard/Branches/Index.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Layouts_DashLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Layouts/DashLayout */ "./resources/js/Layouts/DashLayout.vue");
+/* harmony import */ var _Jetstream_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Jetstream/Button */ "./resources/js/Jetstream/Button.vue");
+/* harmony import */ var _Components_MaterialModal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Components/MaterialModal */ "./resources/js/Components/MaterialModal.vue");
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['products', 'categories', 'stocks', 'branches'],
+  components: {
+    DashLayout: _Layouts_DashLayout__WEBPACK_IMPORTED_MODULE_0__["default"],
+    JetButton: _Jetstream_Button__WEBPACK_IMPORTED_MODULE_1__["default"],
+    Modal: _Components_MaterialModal__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
+  data: function data() {
+    return {
+      dropDown: true,
+      dropDownSelect: 'Products',
+      filter: 'Products'
+    };
+  },
+  methods: {
+    changeItem: function changeItem(name) {
+      this.filter = name.target.value;
+    }
+  },
+  mounted: function mounted() {}
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard/Index.vue?vue&type=script&lang=js&":
 /*!*********************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Dashboard/Index.vue?vue&type=script&lang=js& ***!
@@ -6104,7 +6158,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 
@@ -6173,6 +6226,340 @@ __webpack_require__.r(__webpack_exports__);
     console.log('Component mounted.');
   },
   created: function created() {}
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard/Inventory/Stocks/Index.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Dashboard/Inventory/Stocks/Index.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Layouts_DashLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Layouts/DashLayout */ "./resources/js/Layouts/DashLayout.vue");
+/* harmony import */ var _Jetstream_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Jetstream/Button */ "./resources/js/Jetstream/Button.vue");
+/* harmony import */ var _Components_MaterialModal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Components/MaterialModal */ "./resources/js/Components/MaterialModal.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['branches', 'categories', 'products', 'stocks'],
+  components: {
+    DashLayout: _Layouts_DashLayout__WEBPACK_IMPORTED_MODULE_0__["default"],
+    JetButton: _Jetstream_Button__WEBPACK_IMPORTED_MODULE_1__["default"],
+    Modal: _Components_MaterialModal__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
+  data: function data() {
+    return {
+      addStock: false,
+      branchFilter: 'All',
+      dropDown: true,
+      dropDownSelect: 'Products',
+      error: null,
+      filter: 'Branch',
+      stocksFiltered: [],
+      transferForm: {
+        from: null,
+        to: null,
+        product: null,
+        amount: null
+      },
+      transferModal: false
+    };
+  },
+  methods: {
+    changeItem: function changeItem(name) {
+      this.filter = name.target.value;
+    },
+    sortItem: function sortItem(id) {
+      var _this = this;
+
+      axios.get('/dashboard/stocks/sort/' + id).then(function (response) {
+        _this.stocksFiltered = response.data.stocks;
+        _this.branchFilter = response.data.branchName;
+      });
+    },
+    sortAll: function sortAll() {
+      var _this2 = this;
+
+      axios.get('/dashboard/stocks/sort/').then(function (response) {
+        _this2.stocksFiltered = response.data.stocks;
+        _this2.branchFilter = 'All';
+      });
+    },
+    transfer: function transfer() {
+      var _this3 = this;
+
+      axios.post('/dashboard/stocks/transfer', this.transferForm).then(function (response) {
+        _this3.stocksFiltered = response.data.stocks;
+        _this3.error = response.data.error;
+
+        _this3.transferForm.reset();
+
+        console.log(response.data);
+      })["catch"](function (error) {
+        _this3.error = error.data.error;
+        console.log(_this3.error);
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.sortAll();
+  }
 });
 
 /***/ }),
@@ -48303,7 +48690,7 @@ var render = function() {
     "div",
     {
       staticClass:
-        "fixed h-screen p-4 w-full md:w-1/2 lg:w-1/4 top-0 bg-blue-500 transition-all duration-200",
+        "fixed h-screen p-4 w-full md:w-1/2 lg:w-1/4 top-0 bg-blue-500 transition-all duration-200 shadow-md z-20",
       class: _vm.active == true ? "right-0" : "-right-full"
     },
     [
@@ -50646,7 +51033,7 @@ var render = function() {
             [
               _c("img", {
                 staticClass: "mx-auto",
-                attrs: { src: "/sprites/easybessy_pos-logo_full.png" }
+                attrs: { src: _vm.asset("sprites/easybessy_pos-logo_full.png") }
               })
             ]
           ),
@@ -50790,17 +51177,17 @@ var render = function() {
                   {
                     staticClass:
                       "block px-5 py-2 rounded-xl font-bold flex items-center mb-1",
-                    class: _vm.route().current("linkRoute")
+                    class: _vm.route().current("stocks.index")
                       ? "text-white bg-messy-blue"
                       : "text-gray-600",
-                    attrs: { href: _vm.route("product.index") }
+                    attrs: { href: _vm.route("stocks.index") }
                   },
                   [
                     _c(
                       "div",
                       {
                         staticClass: "h-10 w-5 text-center leading-10 text-lg",
-                        class: _vm.route().current("linkRoute")
+                        class: _vm.route().current("stocks.index")
                           ? "text-white"
                           : "text-gray-400"
                       },
@@ -50880,39 +51267,6 @@ var render = function() {
                           _vm.sidebar == true ? "inline-block ml-4" : "hidden"
                       },
                       [_vm._v("Transactions")]
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "inertia-link",
-                  {
-                    staticClass:
-                      "block px-5 py-2 rounded-xl font-bold flex items-center mb-1 transition-all",
-                    class: _vm.route().current("linkRoute")
-                      ? "text-white bg-messy-blue"
-                      : "text-gray-600",
-                    attrs: { href: _vm.route("product.index") }
-                  },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "h-10 w-5 text-center leading-10 text-lg",
-                        class: _vm.route().current("routeLink")
-                          ? "text-white"
-                          : "text-gray-400"
-                      },
-                      [_c("i", { staticClass: "fas fa-cog" })]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "span",
-                      {
-                        class:
-                          _vm.sidebar == true ? "inline-block ml-4" : "hidden"
-                      },
-                      [_vm._v("Settings")]
                     )
                   ]
                 )
@@ -51177,6 +51531,26 @@ var render = function() {
               _vm._v(" "),
               _c("div", { staticClass: "right-pane flex-1 mx-2" }, [
                 _c("div", { staticClass: "relative flex justify-end" }, [
+                  _c("div", { staticClass: "relative" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass:
+                          "p-3 h-12 w-12 hover:bg-gray-100 rounded-full mx-2 outline-none focus:outline-none",
+                        on: {
+                          click: function($event) {
+                            _vm.accountModal = !_vm.accountModal
+                          }
+                        }
+                      },
+                      [
+                        _c("i", { staticClass: "material-icons" }, [
+                          _vm._v("settings")
+                        ])
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
                   _c("div", { staticClass: "account p-2 relative" }, [
                     _c(
                       "button",
@@ -51292,45 +51666,56 @@ var render = function() {
           ]
         ),
         _vm._v(" "),
-        _c("div", { staticClass: "relative" }, [
-          _c(
-            "div",
-            { staticClass: "container px-4 mx-auto my-16 text-gray-700" },
-            [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "action-bar flex flex-col md:flex-row md:justify-between md:items-center"
-                },
-                [
-                  _c("div", { staticClass: "header flex-1" }, [
+        _c(
+          "div",
+          {
+            staticClass: "relative",
+            class: _vm.sidebar == true ? "ml-64" : "ml-24"
+          },
+          [
+            _c("div", { staticClass: "mx-auto my-16 text-gray-700" }, [
+              _c("div", { staticClass: "relative bg-blue-500 text-white" }, [
+                _c("div", { staticClass: "container mx-auto" }, [
+                  _c("div", { staticClass: "pt-4" }, [
+                    _c("div", { staticClass: "header flex justify-between" }, [
+                      _c("div", { staticClass: "header py-6" }, [
+                        _c(
+                          "h2",
+                          { staticClass: "text-3xl font-bold my-4" },
+                          [_vm._t("header")],
+                          2
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "action py-10" },
+                        [_vm._t("actions")],
+                        2
+                      )
+                    ]),
+                    _vm._v(" "),
                     _c(
-                      "h2",
-                      { staticClass: "text-2xl font-bold my-4" },
-                      [_vm._t("header")],
+                      "div",
+                      { staticClass: "action pt-2 sticky top-16" },
+                      [_vm._t("tabs")],
                       2
                     )
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "actions flex-1 text-right" },
-                    [_vm._t("actions")],
-                    2
-                  )
-                ]
-              ),
+                  ])
+                ])
+              ]),
               _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "relative mt-6 mb-4" },
-                [_vm._t("content")],
-                2
-              )
-            ]
-          )
-        ])
+              _c("div", { staticClass: "relative mt-10 mb-4" }, [
+                _c(
+                  "div",
+                  { staticClass: "container mx-auto" },
+                  [_vm._t("content")],
+                  2
+                )
+              ])
+            ])
+          ]
+        )
       ])
     ])
   ])
@@ -52143,6 +52528,30 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard/Branches/Index.vue?vue&type=template&id=78e49a57&":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Dashboard/Branches/Index.vue?vue&type=template&id=78e49a57& ***!
+  \**********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("dash-layout")
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard/Index.vue?vue&type=template&id=48cd2f5e&":
 /*!*************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Dashboard/Index.vue?vue&type=template&id=48cd2f5e& ***!
@@ -52465,34 +52874,44 @@ var render = function() {
         key: "actions",
         fn: function() {
           return [
+            _c(
+              "button",
+              {
+                staticClass:
+                  "px-4 py-2 ml-4 h-10 bg-white hover:bg-gray-100 text-blue-500 font-bold rounded-md outline-none focus:outline-none transition-all text-sm",
+                attrs: { type: "button" },
+                on: {
+                  click: function($event) {
+                    _vm.createModal = true
+                  }
+                }
+              },
+              [
+                _c("div", { staticClass: "flex items-center" }, [
+                  _c("i", { staticClass: "material-icons" }, [_vm._v("add")]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "ml-2 mt-1" }, [_vm._v("Add")])
+                ])
+              ]
+            )
+          ]
+        },
+        proxy: true
+      },
+      {
+        key: "tabs",
+        fn: function() {
+          return [
             _c("div", { staticClass: "flex" }, [
               _c(
                 "button",
                 {
                   staticClass:
-                    "px-4 py-2 mr-4 h-10 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-md outline-none focus:outline-none transition-all text-sm",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      _vm.createModal = true
-                    }
-                  }
-                },
-                [
-                  _c("div", { staticClass: "flex items-center" }, [
-                    _c("i", { staticClass: "material-icons" }, [_vm._v("add")]),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "ml-2 mt-1" }, [_vm._v("Add")])
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass:
-                    "px-4 py-2 h-10 leading-8 rounded-md outline-none focus:outline-none transition-all",
-                  class: _vm.itemView == "grid" ? "text-blue-500" : "",
+                    "py-2 px-4 h-12 leading-8 border-b-4 rounded-none outline-none focus:outline-none transition-all",
+                  class:
+                    _vm.itemView == "grid"
+                      ? "border-white"
+                      : "border-transparent",
                   attrs: { type: "button" },
                   on: {
                     click: function($event) {
@@ -52501,8 +52920,8 @@ var render = function() {
                   }
                 },
                 [
-                  _c("i", { staticClass: "material-icons" }, [
-                    _vm._v("view_module")
+                  _c("span", { staticClass: "font-medium" }, [
+                    _vm._v("Overview")
                   ])
                 ]
               ),
@@ -52511,8 +52930,11 @@ var render = function() {
                 "button",
                 {
                   staticClass:
-                    "px-4 py-2 h-10 leading-8 rounded-md outline-none focus:outline-none transition-all",
-                  class: _vm.itemView == "list" ? "text-blue-500" : "",
+                    "py-2 px-4 h-12 leading-8 border-b-4 rounded-none outline-none focus:outline-none transition-all",
+                  class:
+                    _vm.itemView == "list"
+                      ? "border-white"
+                      : "border-transparent",
                   attrs: { type: "button" },
                   on: {
                     click: function($event) {
@@ -52521,8 +52943,8 @@ var render = function() {
                   }
                 },
                 [
-                  _c("i", { staticClass: "material-icons" }, [
-                    _vm._v("view_list")
+                  _c("span", { staticClass: "font-medium" }, [
+                    _vm._v("Categories")
                   ])
                 ]
               )
@@ -52543,149 +52965,222 @@ var render = function() {
                   _vm.itemView == "list"
                     ? _c(
                         "div",
-                        {
-                          staticClass:
-                            "table bg-white rounded-xl w-full border border-gray-300 overflow-hidden"
-                        },
-                        [
-                          _c(
+                        { staticClass: "relative" },
+                        _vm._l(_vm.categories, function(category) {
+                          return _c(
                             "div",
-                            {
-                              staticClass:
-                                "table-header p-4 bg-gray-200 border-b border-gray-200 flex items-center justify-between"
-                            },
+                            { key: category.id, staticClass: "mb-6" },
                             [
-                              _c("div", { staticClass: "col w-15 p-4" }, [
-                                _c("h4", {
-                                  staticClass: "text-gray-400 text-sm"
-                                })
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col flex-auto p-4" }, [
-                                _c("h4", {
-                                  staticClass: "text-gray-400 text-sm"
-                                })
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col w-32 p-4" }, [
+                              _c("div", { staticClass: "mb-4" }, [
                                 _c(
-                                  "h4",
+                                  "h3",
                                   {
-                                    staticClass:
-                                      "text-gray-400 font-bold text-sm"
+                                    staticClass: "font-bold text-2xl capitalize"
                                   },
-                                  [_vm._v("Category")]
+                                  [_vm._v(_vm._s(category.name))]
                                 )
                               ]),
                               _vm._v(" "),
-                              _c("div", { staticClass: "col w-32 p-4" }, [
-                                _c(
-                                  "h4",
-                                  {
-                                    staticClass:
-                                      "text-gray-400 font-bold text-sm"
-                                  },
-                                  [_vm._v("Price")]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col w-64 p-4" }, [
-                                _c(
-                                  "h4",
-                                  {
-                                    staticClass:
-                                      "text-gray-400 font-bold text-sm"
-                                  },
-                                  [_vm._v("Actions")]
-                                )
-                              ])
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "table-content p-4" },
-                            _vm._l(_vm.products, function(product) {
-                              return _c(
+                              _c(
                                 "div",
                                 {
-                                  key: product.id,
                                   staticClass:
-                                    "row flex justify-between items-center py-2"
+                                    "grid md:grid-flow-col grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 auto-rows-auto gap-4 w-full"
                                 },
-                                [
-                                  _c("div", { staticClass: "col w-15" }, [
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass:
-                                          "p-2 m-2 bg-blue-300 rounded-xl overflow-hidden w-15 h-15"
-                                      },
-                                      [
-                                        _c("img", {
-                                          staticClass: "h-11 mx-auto",
-                                          attrs: {
-                                            src:
-                                              "https://via.placeholder.com/100.png?text=Image"
-                                          }
-                                        })
-                                      ]
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    { staticClass: "col flex-auto p-4" },
-                                    [
-                                      _c(
-                                        "h4",
+                                _vm._l(_vm.products, function(product) {
+                                  return product.category_id == category.id
+                                    ? _c(
+                                        "div",
                                         {
+                                          key: product.id,
                                           staticClass:
-                                            "text-gray-600 font-bold text-sm"
+                                            "rounded-md bg-white overflow-hidden relative transition-all transform"
                                         },
-                                        [_vm._v(_vm._s(product.name))]
+                                        [
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass:
+                                                "image h-32 overflow-hidden"
+                                            },
+                                            [
+                                              _c("img", {
+                                                staticClass: "w-full mx-auto",
+                                                attrs: {
+                                                  src:
+                                                    "https://via.placeholder.com/100.png?text=Image"
+                                                }
+                                              })
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass:
+                                                "details p-6 flex flex-col pb-20"
+                                            },
+                                            [
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass: "row flex-auto"
+                                                },
+                                                [
+                                                  _c(
+                                                    "h4",
+                                                    {
+                                                      staticClass:
+                                                        "text-gray-600 font-bold text-lg"
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        _vm._s(product.name)
+                                                      )
+                                                    ]
+                                                  )
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "div",
+                                                { staticClass: "row" },
+                                                _vm._l(_vm.categories, function(
+                                                  category
+                                                ) {
+                                                  return category.id ==
+                                                    product.category_id
+                                                    ? _c(
+                                                        "h4",
+                                                        {
+                                                          staticClass:
+                                                            "text-gray-600 font-bold text-sm"
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            _vm._s(
+                                                              category.name
+                                                            )
+                                                          )
+                                                        ]
+                                                      )
+                                                    : _vm._e()
+                                                }),
+                                                0
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "div",
+                                                { staticClass: "row" },
+                                                [
+                                                  _c(
+                                                    "h4",
+                                                    {
+                                                      staticClass:
+                                                        "text-gray-600 font-bold text-sm"
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        "Php " +
+                                                          _vm._s(product.price)
+                                                      )
+                                                    ]
+                                                  )
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass:
+                                                    "absolute bottom-0 left-0 w-full flex gap-2 px-6 py-4"
+                                                },
+                                                [
+                                                  _c(
+                                                    "inertia-link",
+                                                    {
+                                                      staticClass:
+                                                        "flex-auto py-1 h-10 text-center flex-1 focus:outline-none hover:bg-gray-100 rounded-md border-gray-300 border",
+                                                      attrs: {
+                                                        href:
+                                                          "/dashboard/products/" +
+                                                          product.id
+                                                      },
+                                                      on: {
+                                                        click: function(
+                                                          $event
+                                                        ) {
+                                                          $event.preventDefault()
+                                                          return _vm.showProduct(
+                                                            product.name
+                                                          )
+                                                        }
+                                                      }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "span",
+                                                        {
+                                                          staticClass:
+                                                            "text-blue-500 font-bold leading-8 text-sm"
+                                                        },
+                                                        [_vm._v("View")]
+                                                      )
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "button",
+                                                    {
+                                                      staticClass:
+                                                        "py-1 h-10 w-10 text-center focus:outline-none hover:bg-blue-600 rounded-md border-blue-300 bg-blue-500",
+                                                      attrs: { type: "button" }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "i",
+                                                        {
+                                                          staticClass:
+                                                            "material-icons leading-7 text-sm text-white"
+                                                        },
+                                                        [_vm._v("edit")]
+                                                      )
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "button",
+                                                    {
+                                                      staticClass:
+                                                        "py-1 h-10 w-10 text-center focus:outline-none hover:bg-red-600 rounded-md border-red-300 bg-red-500",
+                                                      attrs: { type: "button" }
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "i",
+                                                        {
+                                                          staticClass:
+                                                            "material-icons leading-7 text-sm text-white"
+                                                        },
+                                                        [_vm._v("delete")]
+                                                      )
+                                                    ]
+                                                  )
+                                                ],
+                                                1
+                                              )
+                                            ]
+                                          )
+                                        ]
                                       )
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c("div", { staticClass: "col w-32 p-4" }, [
-                                    _c(
-                                      "h4",
-                                      {
-                                        staticClass:
-                                          "text-gray-600 font-bold text-sm"
-                                      },
-                                      [_vm._v(_vm._s(product.category_id))]
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("div", { staticClass: "col w-32 p-4" }, [
-                                    _c(
-                                      "h4",
-                                      {
-                                        staticClass:
-                                          "text-gray-600 font-bold text-sm"
-                                      },
-                                      [_vm._v("Php " + _vm._s(product.price))]
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("div", { staticClass: "col w-64 p-4" }, [
-                                    _c(
-                                      "h4",
-                                      {
-                                        staticClass:
-                                          "text-gray-600 font-bold text-sm"
-                                      },
-                                      [_vm._v("Actions")]
-                                    )
-                                  ])
-                                ]
+                                    : _vm._e()
+                                }),
+                                0
                               )
-                            }),
-                            0
+                            ]
                           )
-                        ]
+                        }),
+                        0
                       )
                     : _vm._e()
                 ]),
@@ -53206,6 +53701,1447 @@ var render = function() {
                 ]
               )
             ])
+          ]
+        },
+        proxy: true
+      }
+    ])
+  })
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard/Inventory/Stocks/Index.vue?vue&type=template&id=560b7cd7&":
+/*!******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Dashboard/Inventory/Stocks/Index.vue?vue&type=template&id=560b7cd7& ***!
+  \******************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("dash-layout", {
+    scopedSlots: _vm._u([
+      {
+        key: "header",
+        fn: function() {
+          return [_vm._v("\n\t\tStocks\n\t")]
+        },
+        proxy: true
+      },
+      {
+        key: "actions",
+        fn: function() {
+          return [
+            _c(
+              "button",
+              {
+                staticClass:
+                  "px-4 py-2 ml-4 h-10 bg-white hover:bg-gray-100 text-blue-500 font-bold rounded-md outline-none focus:outline-none transition-all text-sm",
+                attrs: { type: "button" },
+                on: {
+                  click: function($event) {
+                    _vm.addStock = true
+                  }
+                }
+              },
+              [
+                _c("div", { staticClass: "flex items-center" }, [
+                  _c("i", { staticClass: "material-icons" }, [_vm._v("add")]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "ml-2 mt-1" }, [_vm._v("Add")])
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass:
+                  "px-4 py-2 ml-4 h-10 bg-white hover:bg-gray-100 text-blue-500 font-bold rounded-md outline-none focus:outline-none transition-all text-sm",
+                attrs: { type: "button" },
+                on: {
+                  click: function($event) {
+                    _vm.transferModal = true
+                  }
+                }
+              },
+              [
+                _c("div", { staticClass: "flex items-center" }, [
+                  _c("i", { staticClass: "material-icons" }, [
+                    _vm._v("double_arrow")
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "ml-2 mt-1" }, [_vm._v("Transfer")])
+                ])
+              ]
+            )
+          ]
+        },
+        proxy: true
+      },
+      {
+        key: "content",
+        fn: function() {
+          return [
+            _c("div", { staticClass: "relative text-right pl-4" }, [
+              _c("div", { staticClass: "relative" }, [
+                _c(
+                  "select",
+                  {
+                    staticClass:
+                      "py-2 pl-4 pr-10 bg-white border rounded-md appearance-none",
+                    attrs: { id: "dropdown", name: "dropdown" },
+                    on: {
+                      change: function($event) {
+                        return _vm.changeItem($event)
+                      }
+                    }
+                  },
+                  [
+                    _c("option", [_vm._v("Products")]),
+                    _vm._v(" "),
+                    _c("option", [_vm._v("Branch")])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "absolute top-0 right-0 p-2\t",
+                    attrs: { for: "dropdown" }
+                  },
+                  [
+                    _vm.dropDown == true
+                      ? _c("i", { staticClass: "material-icons text-md" }, [
+                          _vm._v("unfold_more")
+                        ])
+                      : _vm._e()
+                  ]
+                ),
+                _c("br")
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "relative mt-6" },
+              [
+                _c("transition", { attrs: { name: "cards" } }, [
+                  _vm.filter == "Products"
+                    ? _c(
+                        "div",
+                        { staticClass: "transition-all duration-500" },
+                        [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "grid md:grid-flow-col grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 auto-rows-auto gap-4 w-full"
+                            },
+                            _vm._l(_vm.stocks, function(stock) {
+                              return _c(
+                                "div",
+                                {
+                                  key: stock.id,
+                                  staticClass:
+                                    "hover:shadow-xl rounded-md bg-white overflow-hidden relative transition-all transform hover:scale-105"
+                                },
+                                _vm._l(_vm.products, function(product) {
+                                  return stock.product_id == product.id
+                                    ? _c("div", [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "image h-32 overflow-hidden"
+                                          },
+                                          [
+                                            _c("img", {
+                                              staticClass: "w-full mx-auto",
+                                              attrs: {
+                                                src:
+                                                  "https://via.placeholder.com/100.png?text=Image"
+                                              }
+                                            })
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "details p-6 flex flex-col pb-20"
+                                          },
+                                          [
+                                            _c(
+                                              "div",
+                                              { staticClass: "row flex-auto" },
+                                              [
+                                                _c(
+                                                  "h4",
+                                                  {
+                                                    staticClass:
+                                                      "text-gray-600 font-bold text-lg"
+                                                  },
+                                                  [_vm._v(_vm._s(product.name))]
+                                                )
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "div",
+                                              { staticClass: "row" },
+                                              _vm._l(_vm.categories, function(
+                                                category
+                                              ) {
+                                                return category.id ==
+                                                  product.category_id
+                                                  ? _c(
+                                                      "h4",
+                                                      {
+                                                        staticClass:
+                                                          "text-gray-600 font-bold text-sm"
+                                                      },
+                                                      [
+                                                        _vm._v(
+                                                          _vm._s(category.name)
+                                                        )
+                                                      ]
+                                                    )
+                                                  : _vm._e()
+                                              }),
+                                              0
+                                            ),
+                                            _vm._v(" "),
+                                            _c("div", { staticClass: "row" }, [
+                                              _c(
+                                                "h4",
+                                                {
+                                                  staticClass:
+                                                    "text-gray-600 font-bold text-sm"
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "Php " +
+                                                      _vm._s(product.price)
+                                                  )
+                                                ]
+                                              )
+                                            ]),
+                                            _vm._v(" "),
+                                            _c(
+                                              "div",
+                                              {
+                                                staticClass:
+                                                  "absolute bottom-0 left-0 w-full flex gap-2 px-6 py-4"
+                                              },
+                                              [
+                                                _c(
+                                                  "inertia-link",
+                                                  {
+                                                    staticClass:
+                                                      "flex-auto py-1 h-10 text-center flex-1 focus:outline-none hover:bg-gray-100 rounded-md border-gray-300 border",
+                                                    attrs: {
+                                                      href:
+                                                        "/dashboard/products/" +
+                                                        product.id
+                                                    },
+                                                    on: {
+                                                      click: function($event) {
+                                                        $event.preventDefault()
+                                                        return _vm.showProduct(
+                                                          product.name
+                                                        )
+                                                      }
+                                                    }
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "span",
+                                                      {
+                                                        staticClass:
+                                                          "text-blue-500 font-bold leading-8 text-sm"
+                                                      },
+                                                      [_vm._v("View")]
+                                                    )
+                                                  ]
+                                                ),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "button",
+                                                  {
+                                                    staticClass:
+                                                      "py-1 h-10 w-10 text-center focus:outline-none hover:bg-blue-600 rounded-md border-blue-300 bg-blue-500",
+                                                    attrs: { type: "button" }
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "i",
+                                                      {
+                                                        staticClass:
+                                                          "material-icons leading-7 text-sm text-white"
+                                                      },
+                                                      [_vm._v("edit")]
+                                                    )
+                                                  ]
+                                                ),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "button",
+                                                  {
+                                                    staticClass:
+                                                      "py-1 h-10 w-10 text-center focus:outline-none hover:bg-red-600 rounded-md border-red-300 bg-red-500",
+                                                    attrs: { type: "button" }
+                                                  },
+                                                  [
+                                                    _c(
+                                                      "i",
+                                                      {
+                                                        staticClass:
+                                                          "material-icons leading-7 text-sm text-white"
+                                                      },
+                                                      [_vm._v("delete")]
+                                                    )
+                                                  ]
+                                                )
+                                              ],
+                                              1
+                                            )
+                                          ]
+                                        )
+                                      ])
+                                    : _vm._e()
+                                }),
+                                0
+                              )
+                            }),
+                            0
+                          )
+                        ]
+                      )
+                    : _vm._e()
+                ]),
+                _vm._v(" "),
+                _c("transition", { attrs: { name: "cards" } }, [
+                  _vm.filter == "Branch"
+                    ? _c(
+                        "div",
+                        { staticClass: "transition-all duration-500" },
+                        [
+                          _c("div", { staticClass: "relative flex gap-4" }, [
+                            _c("div", { staticClass: "relative w-64" }, [
+                              _c(
+                                "h4",
+                                {
+                                  staticClass:
+                                    "text-xs text-gray-500 font-bold mb-4"
+                                },
+                                [_vm._v("Branches")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "ol",
+                                [
+                                  _c("li", { staticClass: "mb-3" }, [
+                                    _c(
+                                      "button",
+                                      {
+                                        staticClass:
+                                          "border-l-2 pl-4 outline-none foucs:outline-none",
+                                        class:
+                                          _vm.branchFilter == "All"
+                                            ? "border-blue-500"
+                                            : "border-transparent",
+                                        attrs: { type: "button" },
+                                        on: {
+                                          click: function($event) {
+                                            return _vm.sortAll()
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _c(
+                                          "span",
+                                          { staticClass: "font-bold" },
+                                          [
+                                            _vm._v(
+                                              "\n\t\t\t\t\t\t\t\t\t\t\tAll Branches\n\t\t\t\t\t\t\t\t\t\t"
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _vm._l(_vm.branches, function(branch) {
+                                    return _c("li", { staticClass: "mb-3" }, [
+                                      _c(
+                                        "button",
+                                        {
+                                          staticClass:
+                                            "border-l-2 pl-4 outline-none foucs:outline-none",
+                                          class:
+                                            branch.name == _vm.branchFilter
+                                              ? "border-blue-500"
+                                              : "border-transparent",
+                                          attrs: { type: "button" },
+                                          on: {
+                                            click: function($event) {
+                                              return _vm.sortItem(branch.id)
+                                            }
+                                          }
+                                        },
+                                        [
+                                          _c(
+                                            "span",
+                                            { staticClass: "font-bold" },
+                                            [
+                                              _vm._v(
+                                                "\n\t\t\t\t\t\t\t\t\t\t\t" +
+                                                  _vm._s(branch.name) +
+                                                  "\n\t\t\t\t\t\t\t\t\t\t"
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    ])
+                                  })
+                                ],
+                                2
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "relative flex-auto" }, [
+                              _c(
+                                "div",
+                                { staticClass: "flex flex-col gap-2" },
+                                _vm._l(_vm.stocksFiltered, function(stock) {
+                                  return _c(
+                                    "div",
+                                    {
+                                      key: stock.id,
+                                      staticClass:
+                                        "relative p-4 bg-white rounded-md cursor-pointer hover:bg-gray-200"
+                                    },
+                                    [
+                                      _c("div", { staticClass: "relative" }, [
+                                        _c(
+                                          "div",
+                                          { staticClass: "flex items-center" },
+                                          [
+                                            _vm._l(_vm.products, function(
+                                              product
+                                            ) {
+                                              return stock.product_id ==
+                                                product.id
+                                                ? _c(
+                                                    "div",
+                                                    { staticClass: "flex-1" },
+                                                    [
+                                                      _vm._l(
+                                                        _vm.branches,
+                                                        function(branch) {
+                                                          return _vm.branchFilter ==
+                                                            "All" &&
+                                                            stock.branch_id ==
+                                                              branch.id
+                                                            ? _c(
+                                                                "span",
+                                                                {
+                                                                  staticClass:
+                                                                    "text-xs uppercase"
+                                                                },
+                                                                [
+                                                                  _vm._v(
+                                                                    _vm._s(
+                                                                      branch.name
+                                                                    )
+                                                                  )
+                                                                ]
+                                                              )
+                                                            : _vm._e()
+                                                        }
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "h3",
+                                                        {
+                                                          staticClass:
+                                                            "font-bold"
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            _vm._s(product.name)
+                                                          )
+                                                        ]
+                                                      )
+                                                    ],
+                                                    2
+                                                  )
+                                                : _vm._e()
+                                            }),
+                                            _vm._v(" "),
+                                            _c(
+                                              "div",
+                                              { staticClass: "min-w-32 h-10" },
+                                              [
+                                                _c(
+                                                  "div",
+                                                  {
+                                                    staticClass:
+                                                      "py-1 px-4 rounded-md text-white flex items-center",
+                                                    class:
+                                                      stock.stock_qty >
+                                                      stock.minimum_stock
+                                                        ? "bg-blue-500"
+                                                        : "bg-red-500"
+                                                  },
+                                                  [
+                                                    stock.stock_qty >
+                                                    stock.minimum_stock
+                                                      ? _c(
+                                                          "i",
+                                                          {
+                                                            staticClass:
+                                                              "material-icons leading-9"
+                                                          },
+                                                          [
+                                                            _vm._v(
+                                                              "check_circle"
+                                                            )
+                                                          ]
+                                                        )
+                                                      : _vm._e(),
+                                                    _vm._v(" "),
+                                                    stock.stock_qty <=
+                                                    stock.minimum_stock
+                                                      ? _c(
+                                                          "i",
+                                                          {
+                                                            staticClass:
+                                                              "material-icons leading-9"
+                                                          },
+                                                          [_vm._v("info")]
+                                                        )
+                                                      : _vm._e(),
+                                                    _vm._v(" "),
+                                                    stock.stock_qty >
+                                                    stock.minimum_stock
+                                                      ? _c(
+                                                          "span",
+                                                          {
+                                                            staticClass:
+                                                              "ml-2 font-medium"
+                                                          },
+                                                          [_vm._v("In Stock")]
+                                                        )
+                                                      : _vm._e(),
+                                                    _vm._v(" "),
+                                                    stock.stock_qty <=
+                                                    stock.minimum_stock
+                                                      ? _c(
+                                                          "span",
+                                                          {
+                                                            staticClass:
+                                                              "ml-2 font-medium"
+                                                          },
+                                                          [_vm._v("Low Stock")]
+                                                        )
+                                                      : _vm._e()
+                                                  ]
+                                                )
+                                              ]
+                                            )
+                                          ],
+                                          2
+                                        )
+                                      ])
+                                    ]
+                                  )
+                                }),
+                                0
+                              )
+                            ])
+                          ])
+                        ]
+                      )
+                    : _vm._e()
+                ]),
+                _vm._v(" "),
+                _c("transition", { attrs: { name: "show" } }, [
+                  _c(
+                    "div",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.transferModal == true,
+                          expression: "transferModal == true"
+                        }
+                      ],
+                      staticClass:
+                        "h-screen w-screen bg-gray-200 bg-opacity-50 flex top-0 fixed left-0 scale-100 justify-items-center items-center"
+                    },
+                    [
+                      _c(
+                        "div",
+                        { staticClass: "flex-auto" },
+                        [
+                          _c("transition", { attrs: { name: "modal" } }, [
+                            _c(
+                              "div",
+                              {
+                                directives: [
+                                  {
+                                    name: "show",
+                                    rawName: "v-show",
+                                    value: _vm.transferModal == true,
+                                    expression: "transferModal == true"
+                                  }
+                                ],
+                                staticClass:
+                                  "w-full mx-auto rounded-xl shadow-md bg-white scale-100 overflow-hidden",
+                                staticStyle: { "max-width": "500px" }
+                              },
+                              [
+                                _c(
+                                  "form",
+                                  {
+                                    on: {
+                                      submit: function($event) {
+                                        $event.preventDefault()
+                                        return _vm.transfer()
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      { staticClass: "steps-content p-8" },
+                                      [
+                                        _c("div", [
+                                          _c(
+                                            "h3",
+                                            { staticClass: "mb-4 text-2xl" },
+                                            [
+                                              _vm._v(
+                                                "\n\t\t\t\t\t\t\t\t\t\t\t\tTransfer\n\t\t\t\t\t\t\t\t\t\t\t"
+                                              )
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _vm.error
+                                            ? _c(
+                                                "div",
+                                                {
+                                                  staticClass:
+                                                    "p-4 bg-red-500 rounded-md"
+                                                },
+                                                [
+                                                  _c("span", {
+                                                    staticClass:
+                                                      "font-bold text-white",
+                                                    domProps: {
+                                                      textContent: _vm._s(
+                                                        _vm.error
+                                                      )
+                                                    }
+                                                  })
+                                                ]
+                                              )
+                                            : _vm._e(),
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            { staticClass: "flex gap-4" },
+                                            [
+                                              _c(
+                                                "div",
+                                                { staticClass: "mt-4 flex-1" },
+                                                [
+                                                  _c(
+                                                    "label",
+                                                    {
+                                                      staticClass:
+                                                        "font-bold mb-4 block",
+                                                      attrs: {
+                                                        for: "branchFrom"
+                                                      }
+                                                    },
+                                                    [_vm._v("From")]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "select",
+                                                    {
+                                                      directives: [
+                                                        {
+                                                          name: "model",
+                                                          rawName: "v-model",
+                                                          value:
+                                                            _vm.transferForm
+                                                              .from,
+                                                          expression:
+                                                            "transferForm.from"
+                                                        }
+                                                      ],
+                                                      staticClass:
+                                                        "px-3 py-2 w-full border-2 border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 transition-colors",
+                                                      attrs: {
+                                                        name: "branchFrom",
+                                                        id: "branchFrom",
+                                                        placeholder:
+                                                          "Product Name"
+                                                      },
+                                                      on: {
+                                                        change: function(
+                                                          $event
+                                                        ) {
+                                                          var $$selectedVal = Array.prototype.filter
+                                                            .call(
+                                                              $event.target
+                                                                .options,
+                                                              function(o) {
+                                                                return o.selected
+                                                              }
+                                                            )
+                                                            .map(function(o) {
+                                                              var val =
+                                                                "_value" in o
+                                                                  ? o._value
+                                                                  : o.value
+                                                              return val
+                                                            })
+                                                          _vm.$set(
+                                                            _vm.transferForm,
+                                                            "from",
+                                                            $event.target
+                                                              .multiple
+                                                              ? $$selectedVal
+                                                              : $$selectedVal[0]
+                                                          )
+                                                        }
+                                                      }
+                                                    },
+                                                    _vm._l(
+                                                      _vm.branches,
+                                                      function(branch) {
+                                                        return _c(
+                                                          "option",
+                                                          {
+                                                            key: branch.id,
+                                                            domProps: {
+                                                              value: branch.id
+                                                            }
+                                                          },
+                                                          [
+                                                            _vm._v(
+                                                              _vm._s(
+                                                                branch.name
+                                                              )
+                                                            )
+                                                          ]
+                                                        )
+                                                      }
+                                                    ),
+                                                    0
+                                                  )
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "div",
+                                                { staticClass: "mt-4 flex-1" },
+                                                [
+                                                  _c(
+                                                    "label",
+                                                    {
+                                                      staticClass:
+                                                        "font-bold mb-4 block",
+                                                      attrs: { for: "branchTo" }
+                                                    },
+                                                    [_vm._v("To")]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "select",
+                                                    {
+                                                      directives: [
+                                                        {
+                                                          name: "model",
+                                                          rawName: "v-model",
+                                                          value:
+                                                            _vm.transferForm.to,
+                                                          expression:
+                                                            "transferForm.to"
+                                                        }
+                                                      ],
+                                                      staticClass:
+                                                        "px-3 py-2 w-full border-2 border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 transition-colors",
+                                                      attrs: {
+                                                        name: "branchTo",
+                                                        id: "branchTo",
+                                                        placeholder:
+                                                          "Product Name"
+                                                      },
+                                                      on: {
+                                                        change: function(
+                                                          $event
+                                                        ) {
+                                                          var $$selectedVal = Array.prototype.filter
+                                                            .call(
+                                                              $event.target
+                                                                .options,
+                                                              function(o) {
+                                                                return o.selected
+                                                              }
+                                                            )
+                                                            .map(function(o) {
+                                                              var val =
+                                                                "_value" in o
+                                                                  ? o._value
+                                                                  : o.value
+                                                              return val
+                                                            })
+                                                          _vm.$set(
+                                                            _vm.transferForm,
+                                                            "to",
+                                                            $event.target
+                                                              .multiple
+                                                              ? $$selectedVal
+                                                              : $$selectedVal[0]
+                                                          )
+                                                        }
+                                                      }
+                                                    },
+                                                    _vm._l(
+                                                      _vm.branches,
+                                                      function(branch) {
+                                                        return _c(
+                                                          "option",
+                                                          {
+                                                            key: branch.id,
+                                                            domProps: {
+                                                              value: branch.id
+                                                            }
+                                                          },
+                                                          [
+                                                            _vm._v(
+                                                              _vm._s(
+                                                                branch.name
+                                                              )
+                                                            )
+                                                          ]
+                                                        )
+                                                      }
+                                                    ),
+                                                    0
+                                                  )
+                                                ]
+                                              )
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c("div", { staticClass: "mt-4" }, [
+                                            _c(
+                                              "label",
+                                              {
+                                                staticClass:
+                                                  "font-bold mb-4 block",
+                                                attrs: { for: "product" }
+                                              },
+                                              [_vm._v("Product")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "select",
+                                              {
+                                                directives: [
+                                                  {
+                                                    name: "model",
+                                                    rawName: "v-model",
+                                                    value:
+                                                      _vm.transferForm.product,
+                                                    expression:
+                                                      "transferForm.product"
+                                                  }
+                                                ],
+                                                staticClass:
+                                                  "px-3 py-2 w-full border-2 border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 transition-colors",
+                                                attrs: {
+                                                  name: "product",
+                                                  id: "product",
+                                                  placeholder: "Product Name"
+                                                },
+                                                on: {
+                                                  change: function($event) {
+                                                    var $$selectedVal = Array.prototype.filter
+                                                      .call(
+                                                        $event.target.options,
+                                                        function(o) {
+                                                          return o.selected
+                                                        }
+                                                      )
+                                                      .map(function(o) {
+                                                        var val =
+                                                          "_value" in o
+                                                            ? o._value
+                                                            : o.value
+                                                        return val
+                                                      })
+                                                    _vm.$set(
+                                                      _vm.transferForm,
+                                                      "product",
+                                                      $event.target.multiple
+                                                        ? $$selectedVal
+                                                        : $$selectedVal[0]
+                                                    )
+                                                  }
+                                                }
+                                              },
+                                              _vm._l(_vm.products, function(
+                                                product
+                                              ) {
+                                                return _c(
+                                                  "option",
+                                                  {
+                                                    key: product.id,
+                                                    domProps: {
+                                                      value: product.id
+                                                    }
+                                                  },
+                                                  [_vm._v(_vm._s(product.name))]
+                                                )
+                                              }),
+                                              0
+                                            )
+                                          ]),
+                                          _vm._v(" "),
+                                          _c("div", { staticClass: "mt-4" }, [
+                                            _c(
+                                              "label",
+                                              {
+                                                staticClass:
+                                                  "font-bold mb-4 block",
+                                                attrs: { for: "amount" }
+                                              },
+                                              [_vm._v("Amount")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c("input", {
+                                              directives: [
+                                                {
+                                                  name: "model",
+                                                  rawName: "v-model",
+                                                  value:
+                                                    _vm.transferForm.amount,
+                                                  expression:
+                                                    "transferForm.amount"
+                                                }
+                                              ],
+                                              staticClass:
+                                                "px-3 py-2 w-full border-2 border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 transition-colors",
+                                              attrs: {
+                                                type: "text",
+                                                id: "amount",
+                                                name: "amount",
+                                                placeholder: "Amount"
+                                              },
+                                              domProps: {
+                                                value: _vm.transferForm.amount
+                                              },
+                                              on: {
+                                                input: function($event) {
+                                                  if ($event.target.composing) {
+                                                    return
+                                                  }
+                                                  _vm.$set(
+                                                    _vm.transferForm,
+                                                    "amount",
+                                                    $event.target.value
+                                                  )
+                                                }
+                                              }
+                                            })
+                                          ])
+                                        ])
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "px-8 py-6 mt-4 bg-gray-100 sticky bottom-0"
+                                      },
+                                      [
+                                        _c(
+                                          "div",
+                                          { staticClass: "flex justify-end" },
+                                          [
+                                            _c(
+                                              "button",
+                                              {
+                                                staticClass:
+                                                  "w-32 focus:outline-none border border-transparent py-2 px-5 rounded-lg shadow-sm text-center bg-white hover:bg-gray-200 font-medium mr-4",
+                                                attrs: { type: "button" },
+                                                on: {
+                                                  click: function($event) {
+                                                    _vm.transferModal = false
+                                                  }
+                                                }
+                                              },
+                                              [
+                                                _vm._v(
+                                                  "\n\t\t\t\t\t\t\t\t\t\t\tCancel\n\t\t\t\t\t\t\t\t\t\t"
+                                                )
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "button",
+                                              {
+                                                staticClass:
+                                                  "w-32 focus:outline-none border border-transparent py-2 px-5 rounded-lg shadow-sm text-center text-white bg-blue-500 hover:bg-blue-600 font-medium",
+                                                attrs: { type: "submit" }
+                                              },
+                                              [
+                                                _vm._v(
+                                                  "\n\t\t\t\t\t\t\t\t\t\t\tAdd\n\t\t\t\t\t\t\t\t\t\t"
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                )
+                              ]
+                            )
+                          ])
+                        ],
+                        1
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("transition", { attrs: { name: "show" } }, [
+                  _vm.addStock == true
+                    ? _c(
+                        "div",
+                        {
+                          staticClass:
+                            "h-screen w-screen bg-gray-200 bg-opacity-50 flex top-0 fixed left-0 scale-100 justify-items-center items-center"
+                        },
+                        [
+                          _c(
+                            "div",
+                            { staticClass: "flex-auto" },
+                            [
+                              _c("transition", { attrs: { name: "modal" } }, [
+                                _c(
+                                  "div",
+                                  {
+                                    directives: [
+                                      {
+                                        name: "show",
+                                        rawName: "v-show",
+                                        value: _vm.addStock == true,
+                                        expression: "addStock == true"
+                                      }
+                                    ],
+                                    staticClass:
+                                      "w-full mx-auto rounded-xl shadow-md bg-white scale-100 overflow-hidden",
+                                    staticStyle: { "max-width": "500px" }
+                                  },
+                                  [
+                                    _c(
+                                      "form",
+                                      {
+                                        on: {
+                                          submit: function($event) {
+                                            $event.preventDefault()
+                                            return _vm.transfer()
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _c(
+                                          "div",
+                                          { staticClass: "steps-content p-8" },
+                                          [
+                                            _c("div", [
+                                              _c(
+                                                "h3",
+                                                {
+                                                  staticClass: "mb-4 text-2xl"
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "\n\t\t\t\t\t\t\t\t\t\t\t\tAdd stock\n\t\t\t\t\t\t\t\t\t\t\t"
+                                                  )
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _vm.error
+                                                ? _c(
+                                                    "div",
+                                                    {
+                                                      staticClass:
+                                                        "p-4 bg-red-500 rounded-md"
+                                                    },
+                                                    [
+                                                      _c("span", {
+                                                        staticClass:
+                                                          "font-bold text-white",
+                                                        domProps: {
+                                                          textContent: _vm._s(
+                                                            _vm.error
+                                                          )
+                                                        }
+                                                      })
+                                                    ]
+                                                  )
+                                                : _vm._e(),
+                                              _vm._v(" "),
+                                              _c(
+                                                "div",
+                                                { staticClass: "flex gap-4" },
+                                                [
+                                                  _c(
+                                                    "div",
+                                                    {
+                                                      staticClass: "mt-4 flex-1"
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "label",
+                                                        {
+                                                          staticClass:
+                                                            "font-bold mb-4 block",
+                                                          attrs: {
+                                                            for: "branchFrom"
+                                                          }
+                                                        },
+                                                        [_vm._v("From")]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "select",
+                                                        {
+                                                          directives: [
+                                                            {
+                                                              name: "model",
+                                                              rawName:
+                                                                "v-model",
+                                                              value:
+                                                                _vm.transferForm
+                                                                  .from,
+                                                              expression:
+                                                                "transferForm.from"
+                                                            }
+                                                          ],
+                                                          staticClass:
+                                                            "px-3 py-2 w-full border-2 border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 transition-colors",
+                                                          attrs: {
+                                                            name: "branchFrom",
+                                                            id: "branchFrom",
+                                                            placeholder:
+                                                              "Product Name"
+                                                          },
+                                                          on: {
+                                                            change: function(
+                                                              $event
+                                                            ) {
+                                                              var $$selectedVal = Array.prototype.filter
+                                                                .call(
+                                                                  $event.target
+                                                                    .options,
+                                                                  function(o) {
+                                                                    return o.selected
+                                                                  }
+                                                                )
+                                                                .map(function(
+                                                                  o
+                                                                ) {
+                                                                  var val =
+                                                                    "_value" in
+                                                                    o
+                                                                      ? o._value
+                                                                      : o.value
+                                                                  return val
+                                                                })
+                                                              _vm.$set(
+                                                                _vm.transferForm,
+                                                                "from",
+                                                                $event.target
+                                                                  .multiple
+                                                                  ? $$selectedVal
+                                                                  : $$selectedVal[0]
+                                                              )
+                                                            }
+                                                          }
+                                                        },
+                                                        _vm._l(
+                                                          _vm.branches,
+                                                          function(branch) {
+                                                            return _c(
+                                                              "option",
+                                                              {
+                                                                key: branch.id,
+                                                                domProps: {
+                                                                  value:
+                                                                    branch.id
+                                                                }
+                                                              },
+                                                              [
+                                                                _vm._v(
+                                                                  _vm._s(
+                                                                    branch.name
+                                                                  )
+                                                                )
+                                                              ]
+                                                            )
+                                                          }
+                                                        ),
+                                                        0
+                                                      )
+                                                    ]
+                                                  )
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "div",
+                                                { staticClass: "mt-4" },
+                                                [
+                                                  _c(
+                                                    "label",
+                                                    {
+                                                      staticClass:
+                                                        "font-bold mb-4 block",
+                                                      attrs: { for: "product" }
+                                                    },
+                                                    [_vm._v("Product")]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "select",
+                                                    {
+                                                      directives: [
+                                                        {
+                                                          name: "model",
+                                                          rawName: "v-model",
+                                                          value:
+                                                            _vm.transferForm
+                                                              .product,
+                                                          expression:
+                                                            "transferForm.product"
+                                                        }
+                                                      ],
+                                                      staticClass:
+                                                        "px-3 py-2 w-full border-2 border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 transition-colors",
+                                                      attrs: {
+                                                        name: "product",
+                                                        id: "product",
+                                                        placeholder:
+                                                          "Product Name"
+                                                      },
+                                                      on: {
+                                                        change: function(
+                                                          $event
+                                                        ) {
+                                                          var $$selectedVal = Array.prototype.filter
+                                                            .call(
+                                                              $event.target
+                                                                .options,
+                                                              function(o) {
+                                                                return o.selected
+                                                              }
+                                                            )
+                                                            .map(function(o) {
+                                                              var val =
+                                                                "_value" in o
+                                                                  ? o._value
+                                                                  : o.value
+                                                              return val
+                                                            })
+                                                          _vm.$set(
+                                                            _vm.transferForm,
+                                                            "product",
+                                                            $event.target
+                                                              .multiple
+                                                              ? $$selectedVal
+                                                              : $$selectedVal[0]
+                                                          )
+                                                        }
+                                                      }
+                                                    },
+                                                    _vm._l(
+                                                      _vm.products,
+                                                      function(product) {
+                                                        return _c(
+                                                          "option",
+                                                          {
+                                                            key: product.id,
+                                                            domProps: {
+                                                              value: product.id
+                                                            }
+                                                          },
+                                                          [
+                                                            _vm._v(
+                                                              _vm._s(
+                                                                product.name
+                                                              )
+                                                            )
+                                                          ]
+                                                        )
+                                                      }
+                                                    ),
+                                                    0
+                                                  )
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "div",
+                                                { staticClass: "mt-4" },
+                                                [
+                                                  _c(
+                                                    "label",
+                                                    {
+                                                      staticClass:
+                                                        "font-bold mb-4 block",
+                                                      attrs: { for: "amount" }
+                                                    },
+                                                    [_vm._v("Amount")]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c("input", {
+                                                    directives: [
+                                                      {
+                                                        name: "model",
+                                                        rawName: "v-model",
+                                                        value:
+                                                          _vm.transferForm
+                                                            .amount,
+                                                        expression:
+                                                          "transferForm.amount"
+                                                      }
+                                                    ],
+                                                    staticClass:
+                                                      "px-3 py-2 w-full border-2 border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 transition-colors",
+                                                    attrs: {
+                                                      type: "text",
+                                                      id: "amount",
+                                                      name: "amount",
+                                                      placeholder: "Amount"
+                                                    },
+                                                    domProps: {
+                                                      value:
+                                                        _vm.transferForm.amount
+                                                    },
+                                                    on: {
+                                                      input: function($event) {
+                                                        if (
+                                                          $event.target
+                                                            .composing
+                                                        ) {
+                                                          return
+                                                        }
+                                                        _vm.$set(
+                                                          _vm.transferForm,
+                                                          "amount",
+                                                          $event.target.value
+                                                        )
+                                                      }
+                                                    }
+                                                  })
+                                                ]
+                                              )
+                                            ])
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "px-8 py-6 mt-4 bg-gray-100 sticky bottom-0"
+                                          },
+                                          [
+                                            _c(
+                                              "div",
+                                              {
+                                                staticClass: "flex justify-end"
+                                              },
+                                              [
+                                                _c(
+                                                  "button",
+                                                  {
+                                                    staticClass:
+                                                      "w-32 focus:outline-none border border-transparent py-2 px-5 rounded-lg shadow-sm text-center bg-white hover:bg-gray-200 font-medium mr-4",
+                                                    attrs: { type: "button" },
+                                                    on: {
+                                                      click: function($event) {
+                                                        _vm.addStock = false
+                                                      }
+                                                    }
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      "\n\t\t\t\t\t\t\t\t\t\t\tCancel\n\t\t\t\t\t\t\t\t\t\t"
+                                                    )
+                                                  ]
+                                                ),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "button",
+                                                  {
+                                                    staticClass:
+                                                      "w-32 focus:outline-none border border-transparent py-2 px-5 rounded-lg shadow-sm text-center text-white bg-blue-500 hover:bg-blue-600 font-medium",
+                                                    attrs: { type: "submit" }
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      "\n\t\t\t\t\t\t\t\t\t\t\tAdd\n\t\t\t\t\t\t\t\t\t\t"
+                                                    )
+                                                  ]
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                )
+                              ])
+                            ],
+                            1
+                          )
+                        ]
+                      )
+                    : _vm._e()
+                ])
+              ],
+              1
+            )
           ]
         },
         proxy: true
@@ -69818,12 +71754,16 @@ var map = {
 	"./API/Index.vue": "./resources/js/Pages/API/Index.vue",
 	"./Dashboard": "./resources/js/Pages/Dashboard.vue",
 	"./Dashboard.vue": "./resources/js/Pages/Dashboard.vue",
+	"./Dashboard/Branches/Index": "./resources/js/Pages/Dashboard/Branches/Index.vue",
+	"./Dashboard/Branches/Index.vue": "./resources/js/Pages/Dashboard/Branches/Index.vue",
 	"./Dashboard/Index": "./resources/js/Pages/Dashboard/Index.vue",
 	"./Dashboard/Index.vue": "./resources/js/Pages/Dashboard/Index.vue",
 	"./Dashboard/Inventory/Products/Create": "./resources/js/Pages/Dashboard/Inventory/Products/Create.vue",
 	"./Dashboard/Inventory/Products/Create.vue": "./resources/js/Pages/Dashboard/Inventory/Products/Create.vue",
 	"./Dashboard/Inventory/Products/Index": "./resources/js/Pages/Dashboard/Inventory/Products/Index.vue",
 	"./Dashboard/Inventory/Products/Index.vue": "./resources/js/Pages/Dashboard/Inventory/Products/Index.vue",
+	"./Dashboard/Inventory/Stocks/Index": "./resources/js/Pages/Dashboard/Inventory/Stocks/Index.vue",
+	"./Dashboard/Inventory/Stocks/Index.vue": "./resources/js/Pages/Dashboard/Inventory/Stocks/Index.vue",
 	"./PointOfSales/Index": "./resources/js/Pages/PointOfSales/Index.vue",
 	"./PointOfSales/Index.vue": "./resources/js/Pages/PointOfSales/Index.vue",
 	"./Profile/DeleteUserForm": "./resources/js/Pages/Profile/DeleteUserForm.vue",
@@ -70069,6 +72009,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Dashboard/Branches/Index.vue":
+/*!*********************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Branches/Index.vue ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Index_vue_vue_type_template_id_78e49a57___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Index.vue?vue&type=template&id=78e49a57& */ "./resources/js/Pages/Dashboard/Branches/Index.vue?vue&type=template&id=78e49a57&");
+/* harmony import */ var _Index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Index.vue?vue&type=script&lang=js& */ "./resources/js/Pages/Dashboard/Branches/Index.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Index_vue_vue_type_template_id_78e49a57___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Index_vue_vue_type_template_id_78e49a57___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Pages/Dashboard/Branches/Index.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Dashboard/Branches/Index.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Branches/Index.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Index.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard/Branches/Index.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Dashboard/Branches/Index.vue?vue&type=template&id=78e49a57&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Branches/Index.vue?vue&type=template&id=78e49a57& ***!
+  \****************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_78e49a57___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Index.vue?vue&type=template&id=78e49a57& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard/Branches/Index.vue?vue&type=template&id=78e49a57&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_78e49a57___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_78e49a57___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Dashboard/Index.vue":
 /*!************************************************!*\
   !*** ./resources/js/Pages/Dashboard/Index.vue ***!
@@ -70271,6 +72280,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_0f679cc4___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_0f679cc4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Dashboard/Inventory/Stocks/Index.vue":
+/*!*****************************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Inventory/Stocks/Index.vue ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Index_vue_vue_type_template_id_560b7cd7___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Index.vue?vue&type=template&id=560b7cd7& */ "./resources/js/Pages/Dashboard/Inventory/Stocks/Index.vue?vue&type=template&id=560b7cd7&");
+/* harmony import */ var _Index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Index.vue?vue&type=script&lang=js& */ "./resources/js/Pages/Dashboard/Inventory/Stocks/Index.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Index_vue_vue_type_template_id_560b7cd7___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Index_vue_vue_type_template_id_560b7cd7___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Pages/Dashboard/Inventory/Stocks/Index.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Dashboard/Inventory/Stocks/Index.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Inventory/Stocks/Index.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Index.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard/Inventory/Stocks/Index.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Dashboard/Inventory/Stocks/Index.vue?vue&type=template&id=560b7cd7&":
+/*!************************************************************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Inventory/Stocks/Index.vue?vue&type=template&id=560b7cd7& ***!
+  \************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_560b7cd7___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Index.vue?vue&type=template&id=560b7cd7& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard/Inventory/Stocks/Index.vue?vue&type=template&id=560b7cd7&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_560b7cd7___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_560b7cd7___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -70791,7 +72869,8 @@ __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.mixin({
   methods: {
-    route: route
+    route: route,
+    asset: _codinglabs_laravel_asset__WEBPACK_IMPORTED_MODULE_2__["asset"]
   }
 });
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(_inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_3__["InertiaApp"]);

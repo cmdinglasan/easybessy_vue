@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+	button {
+		outline: none;
+	}
+	button:focus {
+		outline: none;
+	}
+}
 @layer utilities {
 
 	.search-box {

@@ -7,18 +7,21 @@
 		</template>
 
 		<template #actions>
+			<button type="button" class="px-4 py-2 ml-4 h-10 bg-white hover:bg-gray-100 text-blue-500 font-bold rounded-md outline-none focus:outline-none transition-all text-sm" @click="createModal = true">
+				<div class="flex items-center">
+					<i class="material-icons">add</i>
+					<span class="ml-2 mt-1">Add</span>
+				</div>
+			</button>
+		</template>
+
+		<template #tabs>
 			<div class="flex">
-				<button type="button" class="px-4 py-2 mr-4 h-10 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-md outline-none focus:outline-none transition-all text-sm" @click="createModal = true">
-					<div class="flex items-center">
-						<i class="material-icons">add</i>
-						<span class="ml-2 mt-1">Add</span>
-					</div>
+				<button type="button" class="py-2 px-4 h-12 leading-8 border-b-4 rounded-none outline-none focus:outline-none transition-all" @click="itemView = 'grid'" :class="itemView == 'grid' ? 'border-white' : 'border-transparent' ">
+					<span class="font-medium">Overview</span>
 				</button>
-				<button type="button" class="px-4 py-2 h-10 leading-8 rounded-md outline-none focus:outline-none transition-all" @click="itemView = 'grid'" :class="itemView == 'grid' ? 'text-blue-500' : '' ">
-					<i class="material-icons">view_module</i>
-				</button>
-				<button type="button" class="px-4 py-2 h-10 leading-8 rounded-md outline-none focus:outline-none transition-all" @click="itemView = 'list'" :class="itemView == 'list' ? 'text-blue-500' : '' ">
-					<i class="material-icons">view_list</i>
+				<button type="button" class="py-2 px-4 h-12 leading-8 border-b-4 rounded-none outline-none focus:outline-none transition-all" @click="itemView = 'list'" :class="itemView == 'list' ? 'border-white' : 'border-transparent' ">
+					<span class="font-medium">Categories</span>
 				</button>
 			</div>
 		</template>
@@ -27,42 +30,38 @@
 
 			<div class="relative">
 				<transition name="cards">
-					<div class="table bg-white rounded-xl w-full border border-gray-300 overflow-hidden" v-if="itemView == 'list'">
-						<div class="table-header p-4 bg-gray-200 border-b border-gray-200 flex items-center justify-between">
-							<div class="col w-15 p-4">
-								<h4 class="text-gray-400 text-sm"></h4>
+					<div class="relative" v-if="itemView == 'list'">
+						<div class="mb-6" v-for="category in categories" :key="category.id">
+							<div class="mb-4">
+								<h3 class="font-bold text-2xl capitalize">{{ category.name }}</h3>
 							</div>
-							<div class="col flex-auto p-4">
-								<h4 class="text-gray-400 text-sm"></h4>
-							</div>
-							<div class="col w-32 p-4">
-								<h4 class="text-gray-400 font-bold text-sm">Category</h4>
-							</div>
-							<div class="col w-32 p-4">
-								<h4 class="text-gray-400 font-bold text-sm">Price</h4>
-							</div>
-							<div class="col w-64 p-4">
-								<h4 class="text-gray-400 font-bold text-sm">Actions</h4>
-							</div>
-						</div>
-						<div class="table-content p-4">
-							<div class="row flex justify-between items-center py-2" v-for="product in products" :key="product.id">
-								<div class="col w-15">
-									<div class="p-2 m-2 bg-blue-300 rounded-xl overflow-hidden w-15 h-15">
-										<img src="https://via.placeholder.com/100.png?text=Image" class="h-11 mx-auto"/>
+							<div class="grid md:grid-flow-col grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 auto-rows-auto gap-4 w-full">
+								<div class="rounded-md bg-white overflow-hidden relative transition-all transform" v-for="product in products" v-if="product.category_id == category.id" :key="product.id">
+									<div class="image h-32 overflow-hidden">
+										<img src="https://via.placeholder.com/100.png?text=Image" class="w-full mx-auto"/>
 									</div>
-								</div>
-								<div class="col flex-auto p-4">
-									<h4 class="text-gray-600 font-bold text-sm">{{ product.name }}</h4>
-								</div>
-								<div class="col w-32 p-4">
-									<h4 class="text-gray-600 font-bold text-sm">{{ product.category_id }}</h4>
-								</div>
-								<div class="col w-32 p-4">
-									<h4 class="text-gray-600 font-bold text-sm">Php {{ product.price }}</h4>
-								</div>
-								<div class="col w-64 p-4">
-									<h4 class="text-gray-600 font-bold text-sm">Actions</h4>
+									<div class="details p-6 flex flex-col pb-20">
+										<div class="row flex-auto">
+											<h4 class="text-gray-600 font-bold text-lg">{{ product.name }}</h4>
+										</div>
+										<div class="row">
+											<h4 class="text-gray-600 font-bold text-sm" v-for="category in categories" v-if="category.id == product.category_id">{{ category.name }}</h4>
+										</div>
+										<div class="row">
+											<h4 class="text-gray-600 font-bold text-sm">Php {{ product.price }}</h4>
+										</div>
+										<div class="absolute bottom-0 left-0 w-full flex gap-2 px-6 py-4">
+											<inertia-link :href="'/dashboard/products/' + product.id" class="flex-auto py-1 h-10 text-center flex-1 focus:outline-none hover:bg-gray-100 rounded-md border-gray-300 border" @click.prevent="showProduct(product.name)">
+												<span class="text-blue-500 font-bold leading-8 text-sm">View</span>
+											</inertia-link>
+											<button type="button" class="py-1 h-10 w-10 text-center focus:outline-none hover:bg-blue-600 rounded-md border-blue-300 bg-blue-500">
+												<i class="material-icons leading-7 text-sm text-white">edit</i>
+											</button>
+											<button type="button" class="py-1 h-10 w-10 text-center focus:outline-none hover:bg-red-600 rounded-md border-red-300 bg-red-500">
+												<i class="material-icons leading-7 text-sm text-white">delete</i>
+											</button>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>

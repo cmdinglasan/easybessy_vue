@@ -30,6 +30,7 @@
     },
     "dependencies": {
         "@codinglabs/laravel-asset": "^1.0.1",
-        "alpinejs": "^2.7.3"
+        "alpinejs": "^2.7.3",
+        "vue-clickaway": "^2.2.2"
     }
 }

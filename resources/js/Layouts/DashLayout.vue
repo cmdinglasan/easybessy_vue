@@ -4,7 +4,7 @@
 		<div class="fixed h-screen bg-white top-0 shadow-md overflow-y-auto overflow-x-hidden no-scrollbar transition-all z-10" :class="sidebar == true ? 'w-64' : 'w-24' ">
 			<header class="bg-white sticky top-0 flex">
 		        <div class="h-20 py-6 pl-8 pr-4" :class="sidebar == true ? 'w-64' : 'hidden' ">
-		        	<img :src="'/sprites/easybessy_pos-logo_full.png'" class="mx-auto">
+		        	<img :src="asset('sprites/easybessy_pos-logo_full.png')" class="mx-auto">
 		        </div>
 				<div class="fas fa-bars text-2xl text-center h-20 py-6 px-8 cursor-pointer hover:bg-gray-200" :class="sidebar == true ? 'w-20' : 'w-full'" @click="sidebar = !sidebar"></div>
 		    </header>
@@ -32,8 +32,8 @@
 		    				</div>
 		    				<span :class="sidebar == true ? 'inline-block ml-4' : 'hidden' ">Branches</span>
 		    			</inertia-link>
-		    			<inertia-link :href="route('product.index')" class="block px-5 py-2 rounded-xl font-bold flex items-center mb-1" :class="route().current('linkRoute') ? 'text-white bg-messy-blue' : 'text-gray-600'">
-		    				<div class="h-10 w-5 text-center leading-10 text-lg" :class="route().current('linkRoute') ? 'text-white' : 'text-gray-400'">
+		    			<inertia-link :href="route('stocks.index')" class="block px-5 py-2 rounded-xl font-bold flex items-center mb-1" :class="route().current('stocks.index') ? 'text-white bg-messy-blue' : 'text-gray-600'">
+		    				<div class="h-10 w-5 text-center leading-10 text-lg" :class="route().current('stocks.index') ? 'text-white' : 'text-gray-400'">
 		    					<i class="fas fa-box"></i>
 		    				</div>
 		    				<span :class="sidebar == true ? 'inline-block ml-4' : 'hidden' ">Stocks</span>
@@ -49,12 +49,6 @@
 		    					<i class="fas fa-clipboard-list"></i>
 		    				</div>
 		    				<span :class="sidebar == true ? 'inline-block ml-4' : 'hidden' ">Transactions</span>
-		    			</inertia-link>
-		    			<inertia-link :href="route('product.index')" class="block px-5 py-2 rounded-xl font-bold flex items-center mb-1 transition-all" :class="route().current('linkRoute') ? 'text-white bg-messy-blue' : 'text-gray-600'">
-		    				<div class="h-10 w-5 text-center leading-10 text-lg" :class="route().current('routeLink') ? 'text-white' : 'text-gray-400'">
-		    					<i class="fas fa-cog"></i>
-		    				</div>
-		    				<span :class="sidebar == true ? 'inline-block ml-4' : 'hidden' ">Settings</span>
 		    			</inertia-link>
 		    		</div>
 		    	</div>
@@ -141,6 +135,11 @@
 						</div>
 						<div class="right-pane flex-1 mx-2">
 							<div class="relative flex justify-end">
+								<div class="relative">
+									<button class="p-3 h-12 w-12 hover:bg-gray-100 rounded-full mx-2 outline-none focus:outline-none" @click="accountModal = !accountModal">
+										<i class="material-icons">settings</i>
+									</button>
+								</div>
 								<div class="account p-2 relative">
 									<button class="rounded-full overflow-hidden focus:outline-none outline-none ring-4 ring-transparent focus:ring-gray-100 h-8 w-8" @click="accountModal = !accountModal">
 										<img :src="currentUser.image" class="h-8"/>
@@ -177,21 +176,32 @@
 					</div>
 				</header>
 
-				<div class="relative">
-					<div class="container px-4 mx-auto my-16 text-gray-700">
-						<div class="action-bar flex flex-col md:flex-row md:justify-between md:items-center">
-							<div class="header flex-1">
-								<h2 class="text-2xl font-bold my-4">
-									<slot name="header"/>
-								</h2>
-							</div>
-							<div class="actions flex-1 text-right">
-								<slot name="actions"/>
+				<div class="relative" :class="sidebar == true ? 'ml-64' : 'ml-24' ">
+					<div class="mx-auto my-16 text-gray-700">
+						<div class="relative bg-blue-500 text-white">
+							<div class="container mx-auto">
+								<div class="pt-4">
+									<div class="header flex justify-between">
+										<div class="header py-6">
+											<h2 class="text-3xl font-bold my-4">
+												<slot name="header"/>
+											</h2>
+										</div>
+										<div class="action py-10">
+											<slot name="actions"/>
+										</div>
+									</div>
+									<div class="action pt-2 sticky top-16">
+										<slot name="tabs"/>
+									</div>
+								</div>
 							</div>
 						</div>
 
-						<div class="relative mt-6 mb-4">
-							<slot name="content"/>
+						<div class="relative mt-10 mb-4">
+							<div class="container mx-auto">
+								<slot name="content"/>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -215,17 +225,16 @@
 	            currentUser: [],
 	            user: null,
 	            accountModal: false,
-	            sidebar: true,
+	            sidebar: false,
         	}
         },
         mounted() {
-        	axios.get('api/user')
+        	axios.get('/api/user')
         		.then((response) => { 
         			this.currentUser = response.data; 
-        			console.log(this.currentUser); 
         		})
 		        .catch(function (error) {
-		          console.log(error);
+		          	console.log(error);
 		        })
         }
     }
