@@ -111,4 +111,34 @@ class StockController extends Controller
     	$this->sortAll();
     }
 
+    public function store(Request $request)
+    {
+    	$request->validate([
+    		'branch' => 'required',
+    		'product' => 'required',
+    		'amount' => 'required',
+    	]);
+
+    	$stock = Stock::where([
+    		['branch_id', $request->branch],
+    		['product_id', $request->product],
+    	])->first();
+
+    	if(!$stock) {
+    		Stock::create([
+	    		'branch_id' => $request->branch,
+	    		'product_id' => $request->product,
+	    		'stock_qty' => $request->amount,
+    		]);
+	    	return compact('stocks');
+    	} else {
+    		$stock->stock_qty += $request->amount;
+    		$stock->save();
+	    	return response()->json(['error' => 'Added '. $request->amount. ' products with id' . $request->product]);
+    	}
+
+		return response()->json(['error' => 'Product already added']);
+
+    }
+
 }

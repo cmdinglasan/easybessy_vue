@@ -37,7 +37,7 @@
 			<div class="relative mt-6">
 				<transition name="cards">
 					<div class="transition-all duration-500" v-if="filter == 'Products'">
-						<div class="grid md:grid-flow-col grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 auto-rows-auto gap-4 w-full">
+						<div class="grid grid-cols-5 auto-rows-auto gap-6 w-full">
 							<div class="hover:shadow-xl rounded-md bg-white overflow-hidden relative transition-all transform hover:scale-105" v-for="stock in stocks" :key="stock.id">
 								<div v-for="product in products" v-if="stock.product_id == product.id">
 									<div class="image h-32 overflow-hidden">
@@ -193,7 +193,7 @@
 								<div class="w-full mx-auto rounded-xl shadow-md bg-white scale-100 overflow-hidden" style="max-width: 500px" v-show="addStock == true">
 
 									<!-- Steps Content -->
-									<form @submit.prevent="transfer()">
+									<form @submit.prevent="stockStore()">
 										
 										<div class="steps-content p-8">
 											<div>
@@ -205,21 +205,24 @@
 												</div>
 												<div class="flex gap-4">
 													<div class="mt-4 flex-1">
-														<label for="branchFrom" class="font-bold mb-4 block">From</label>
-														<select name="branchFrom" id="branchFrom" v-model="transferForm.from" class="px-3 py-2 w-full border-2 border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 transition-colors" placeholder="Product Name">
+														<label for="stockBranch" class="font-bold mb-4 block">Branch</label>
+														<select name="stockBranch" id="stockBranch" v-model="stockForm.branch" class="px-3 py-2 w-full border-2 border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 transition-colors" placeholder="Product Name">
 															<option v-for="branch in branches" :key="branch.id" :value="branch.id">{{ branch.name }}</option>
 														</select>
 													</div>
 												</div>
 												<div class="mt-4">
 													<label for="product" class="font-bold mb-4 block">Product</label>
-													<select name="product" id="product" v-model="transferForm.product" class="px-3 py-2 w-full border-2 border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 transition-colors" placeholder="Product Name">
+													<select name="product" id="product" v-model="stockForm.product" class="px-3 py-2 w-full border-2 border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 transition-colors" placeholder="Product Name">
 														<option v-for="product in products" :key="product.id" :value="product.id">{{ product.name }}</option>
 													</select>
 												</div>
 												<div class="mt-4">
 													<label for="amount" class="font-bold mb-4 block">Amount</label>
-													<input type="text" id="amount" name="amount" v-model="transferForm.amount" class="px-3 py-2 w-full border-2 border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 transition-colors" placeholder="Amount" />
+													<div class="relative">
+														<input type="text" id="amount" name="amount" v-model="stockForm.amount" class="px-3 py-2 pl-16 w-full border-2 border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 transition-colors" placeholder="Amount" />
+														<span class="rounded-md font-bold top-1 h-10 left-2 leading-9 absolute h-9 w-12 text-center text-gray-700">Php</span>
+													</div>
 												</div>
 											</div>
 										</div>
@@ -268,7 +271,12 @@
     			dropDown: true,
     			dropDownSelect: 'Products',
     			error: null,
-    			filter: 'Branch',
+    			filter: 'Products',
+    			stockForm: {
+    				branch: null,
+    				product: null,
+    				amount: null,
+    			},
     			stocksFiltered: [],
     			transferForm: {
     				from: null,
@@ -297,6 +305,20 @@
 	         		this.branchFilter = 'All';
          		});
     		},
+			stockStore() {
+				axios.post('/dashboard/stocks', this.stockForm)
+					.then((response) => {
+						if(response.data.error) {
+							this.error = response.data.error;
+							console.log(response.data.error);
+						} else {
+	             			this.addStock = false;
+						}
+             		}).catch((error) => {
+		         		this.error = error;
+	         			console.log(this.error);
+         			});
+			},
     		transfer() {
     			axios.post('/dashboard/stocks/transfer', this.transferForm)
 					.then((response) => {
