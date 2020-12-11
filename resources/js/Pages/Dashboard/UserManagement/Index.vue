@@ -2,7 +2,7 @@
 	<dash-layout>
 		
         <template #header>
-            Branches
+            User Management
         </template>
 
         <template #actions>

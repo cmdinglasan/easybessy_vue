@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Resources\CurrentUserResource;
 use App\Models\User;
+use Inertia\Inertia;
 
 class UserController extends Controller
 {
@@ -20,5 +21,15 @@ class UserController extends Controller
     	);
 
     	return $user;
+    }
+
+    public function index(Request $request)
+    {
+        $users = User::orderBy('name')->get();
+
+        return Inertia::render('Dashboard/UserManagement/Index',[
+            'users' => $users,
+        ]);
+
     }
 }

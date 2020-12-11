@@ -107,8 +107,6 @@ class StockController extends Controller
 	    }
 
     	return compact('stockTo');
-
-    	$this->sortAll();
     }
 
     public function store(Request $request)

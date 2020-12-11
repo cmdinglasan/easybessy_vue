@@ -5567,19 +5567,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -5990,6 +5977,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -6028,6 +6028,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layouts_DashLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Layouts/DashLayout */ "./resources/js/Layouts/DashLayout.vue");
 /* harmony import */ var _Chart_Chart__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Chart/Chart */ "./resources/js/Chart/Chart.vue");
+/* harmony import */ var vue_apexcharts__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-apexcharts */ "./node_modules/vue-apexcharts/dist/vue-apexcharts.js");
+/* harmony import */ var vue_apexcharts__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue_apexcharts__WEBPACK_IMPORTED_MODULE_2__);
 //
 //
 //
@@ -6041,12 +6043,38 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     DashLayout: _Layouts_DashLayout__WEBPACK_IMPORTED_MODULE_0__["default"],
-    Chart: _Chart_Chart__WEBPACK_IMPORTED_MODULE_1__["default"]
+    Chart: _Chart_Chart__WEBPACK_IMPORTED_MODULE_1__["default"],
+    apexcharts: vue_apexcharts__WEBPACK_IMPORTED_MODULE_2___default.a
+  },
+  data: function data() {
+    return {
+      chartOptions: {
+        chart: {
+          id: "basic-bar"
+        },
+        xaxis: {
+          categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998]
+        }
+      },
+      series1: [45, 55, 41, 17, 15],
+      chartOption: {
+        labels: ['Apple', 'Mango', 'Orange', 'Watermelon', 'Banana']
+      }
+    };
   }
 });
 
@@ -6742,6 +6770,64 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     this.sortAll();
   }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard/UserManagement/Index.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Dashboard/UserManagement/Index.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Layouts_DashLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Layouts/DashLayout */ "./resources/js/Layouts/DashLayout.vue");
+/* harmony import */ var _Jetstream_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Jetstream/Button */ "./resources/js/Jetstream/Button.vue");
+/* harmony import */ var _Components_MaterialModal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Components/MaterialModal */ "./resources/js/Components/MaterialModal.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['products', 'categories', 'stocks', 'branches'],
+  components: {
+    DashLayout: _Layouts_DashLayout__WEBPACK_IMPORTED_MODULE_0__["default"],
+    JetButton: _Jetstream_Button__WEBPACK_IMPORTED_MODULE_1__["default"],
+    Modal: _Components_MaterialModal__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
+  data: function data() {
+    return {
+      dropDown: true,
+      dropDownSelect: 'Products',
+      filter: 'Products'
+    };
+  },
+  methods: {
+    changeItem: function changeItem(name) {
+      this.filter = name.target.value;
+    }
+  },
+  mounted: function mounted() {}
 });
 
 /***/ }),
@@ -51627,724 +51713,716 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "relative text-gray-700" }, [
-    _c(
-      "div",
-      {
-        staticClass:
-          "fixed h-screen bg-white top-0 shadow-md overflow-y-auto overflow-x-hidden no-scrollbar transition-all z-10",
-        class: _vm.sidebar == true ? "w-64" : "w-24"
-      },
-      [
-        _c("header", { staticClass: "bg-white sticky top-0 flex" }, [
-          _c(
-            "div",
-            {
-              staticClass: "h-20 py-6 pl-8 pr-4",
-              class: _vm.sidebar == true ? "w-64" : "hidden"
-            },
-            [
-              _c("img", {
-                staticClass: "mx-auto",
-                attrs: { src: _vm.asset("sprites/easybessy_pos-logo_full.png") }
-              })
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", {
-            staticClass:
-              "fas fa-bars text-2xl text-center h-20 py-6 px-8 cursor-pointer hover:bg-gray-200",
-            class: _vm.sidebar == true ? "w-20" : "w-full",
-            on: {
-              click: function($event) {
-                _vm.sidebar = !_vm.sidebar
+  return _c(
+    "div",
+    { staticClass: "relative light:text-gray-700 dark:text-white" },
+    [
+      _c(
+        "div",
+        {
+          staticClass:
+            "fixed h-screen bg-white top-0 shadow-md overflow-y-auto overflow-x-hidden no-scrollbar transition-all z-10",
+          class:
+            _vm.sidebar == true
+              ? "lg:w-64 left-0"
+              : "lg:w-24 -left-full md:left-0"
+        },
+        [
+          _c("header", { staticClass: "bg-white sticky top-0 flex" }, [
+            _c(
+              "div",
+              {
+                staticClass: "h-20 py-6 pl-8 pr-4",
+                class: _vm.sidebar == true ? "w-64" : "hidden"
+              },
+              [
+                _c("img", {
+                  staticClass: "mx-auto",
+                  attrs: {
+                    src: _vm.asset("sprites/easybessy_pos-logo_full.png")
+                  }
+                })
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", {
+              staticClass:
+                "fas fa-bars text-2xl text-center h-20 py-6 px-8 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-800",
+              class: _vm.sidebar == true ? "w-20" : "w-full",
+              on: {
+                click: function($event) {
+                  _vm.sidebar = !_vm.sidebar
+                }
               }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("nav", [
-          _c("div", { staticClass: "nav-group" }, [
-            _c(
-              "div",
-              {
-                staticClass: "group-title px-9 pt-6",
-                class: _vm.sidebar == true ? "block" : "hidden"
-              },
-              [
-                _c("h5", { staticClass: "text-xs font-bold text-gray-400" }, [
-                  _vm._v("Admin Tools")
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "px-4 pt-4 pb-6" },
-              [
-                _c(
-                  "inertia-link",
-                  {
-                    staticClass:
-                      "block px-5 py-2 rounded-xl font-bold text-white flex items-center mb-1 transition-all",
-                    class: _vm.route().current("dashboard")
-                      ? "text-white bg-messy-blue "
-                      : "text-gray-600",
-                    attrs: { href: _vm.route("dashboard") }
-                  },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "h-10 w-5 text-center leading-10 text-lg",
-                        class: _vm.route().current("dashboard")
-                          ? "text-white"
-                          : "text-gray-400"
-                      },
-                      [
-                        _c("i", { staticClass: "material-icons leading-10" }, [
-                          _vm._v("dashboard")
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "span",
-                      {
-                        class:
-                          _vm.sidebar == true ? "inline-block ml-4" : "hidden"
-                      },
-                      [_vm._v("Overview")]
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "inertia-link",
-                  {
-                    staticClass:
-                      "block px-5 py-2 rounded-xl font-bold flex items-center mb-1",
-                    class: _vm.route().current("product.index")
-                      ? "text-white bg-messy-blue"
-                      : "text-gray-600",
-                    attrs: { href: _vm.route("product.index") }
-                  },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "h-10 w-5 text-center leading-10 text-lg",
-                        class: _vm.route().current("product.index")
-                          ? "text-white"
-                          : "text-gray-400"
-                      },
-                      [_c("i", { staticClass: "fas fa-shopping-bag" })]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "span",
-                      {
-                        class:
-                          _vm.sidebar == true ? "inline-block ml-4" : "hidden"
-                      },
-                      [_vm._v("Products")]
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "inertia-link",
-                  {
-                    staticClass:
-                      "block px-5 py-2 rounded-xl font-bold flex items-center mb-1 transition-all",
-                    class: _vm.route().current("linkRoute")
-                      ? "text-white bg-messy-blue"
-                      : "text-gray-600",
-                    attrs: { href: _vm.route("product.index") }
-                  },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "h-10 w-5 text-center leading-10 text-lg",
-                        class: _vm.route().current("routeLink")
-                          ? "text-white"
-                          : "text-gray-400"
-                      },
-                      [_c("i", { staticClass: "fas fa-store" })]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "span",
-                      {
-                        class:
-                          _vm.sidebar == true ? "inline-block ml-4" : "hidden"
-                      },
-                      [_vm._v("Branches")]
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "inertia-link",
-                  {
-                    staticClass:
-                      "block px-5 py-2 rounded-xl font-bold flex items-center mb-1",
-                    class: _vm.route().current("stocks.index")
-                      ? "text-white bg-messy-blue"
-                      : "text-gray-600",
-                    attrs: { href: _vm.route("stocks.index") }
-                  },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "h-10 w-5 text-center leading-10 text-lg",
-                        class: _vm.route().current("stocks.index")
-                          ? "text-white"
-                          : "text-gray-400"
-                      },
-                      [_c("i", { staticClass: "fas fa-box" })]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "span",
-                      {
-                        class:
-                          _vm.sidebar == true ? "inline-block ml-4" : "hidden"
-                      },
-                      [_vm._v("Stocks")]
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "inertia-link",
-                  {
-                    staticClass:
-                      "block px-5 py-2 rounded-xl font-bold flex items-center mb-1 transition-all",
-                    class: _vm.route().current("linkRoute")
-                      ? "text-white bg-messy-blue"
-                      : "text-gray-600",
-                    attrs: { href: _vm.route("product.index") }
-                  },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "h-10 w-5 text-center leading-10 text-lg",
-                        class: _vm.route().current("routeLink")
-                          ? "text-white"
-                          : "text-gray-400"
-                      },
-                      [_c("i", { staticClass: "fas fa-user" })]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "span",
-                      {
-                        class:
-                          _vm.sidebar == true ? "inline-block ml-4" : "hidden"
-                      },
-                      [_vm._v("Users")]
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "inertia-link",
-                  {
-                    staticClass:
-                      "block px-5 py-2 rounded-xl font-bold flex items-center mb-1 transition-all",
-                    class: _vm.route().current("linkRoute")
-                      ? "text-white bg-messy-blue"
-                      : "text-gray-600",
-                    attrs: { href: _vm.route("product.index") }
-                  },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "h-10 w-5 text-center leading-10 text-xl",
-                        class: _vm.route().current("routeLink")
-                          ? "text-white"
-                          : "text-gray-400"
-                      },
-                      [_c("i", { staticClass: "fas fa-clipboard-list" })]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "span",
-                      {
-                        class:
-                          _vm.sidebar == true ? "inline-block ml-4" : "hidden"
-                      },
-                      [_vm._v("Transactions")]
-                    )
-                  ]
-                )
-              ],
-              1
-            )
+            })
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "nav-group" }, [
-            _c(
-              "div",
-              {
-                staticClass: "group-title px-8 ",
-                class: _vm.sidebar == true ? "block" : "hidden"
-              },
-              [
-                _c("h5", { staticClass: "text-xs font-bold text-gray-400" }, [
-                  _vm._v("More")
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "px-3 pt-4 pb-6" },
-              [
-                _c(
-                  "inertia-link",
-                  {
-                    staticClass:
-                      "block px-5 py-2 rounded-xl font-bold flex items-center mb-1 transition-all",
-                    class: _vm.route().current("routeLink")
-                      ? "text-white bg-messy-blue"
-                      : "text-gray-600",
-                    attrs: { href: _vm.route("product.index") }
-                  },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "h-10 w-5 text-center leading-10 text-lg",
-                        class: _vm.route().current("routeLink")
-                          ? "text-white"
-                          : "text-gray-400"
-                      },
-                      [_c("i", { staticClass: "far fa-envelope" })]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "span",
-                      {
-                        class:
-                          _vm.sidebar == true ? "inline-block ml-4" : "hidden"
-                      },
-                      [_vm._v("Messages")]
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "inertia-link",
-                  {
-                    staticClass:
-                      "block px-5 py-2 rounded-xl font-bold flex items-center mb-1 transition-all",
-                    class: _vm.route().current("routeLink")
-                      ? "text-white bg-messy-blue"
-                      : "text-gray-600",
-                    attrs: { href: _vm.route("product.index") }
-                  },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "h-10 w-5 text-center leading-10 text-lg",
-                        class: _vm.route().current("routeLink")
-                          ? "text-white"
-                          : "text-gray-400"
-                      },
-                      [_c("i", { staticClass: "far fa-bell" })]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "span",
-                      {
-                        class:
-                          _vm.sidebar == true ? "inline-block ml-4" : "hidden"
-                      },
-                      [_vm._v("Notifications")]
-                    )
-                  ]
-                )
-              ],
-              1
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "nav-group" }, [
-            _c(
-              "div",
-              {
-                staticClass: "group-title px-8 ",
-                class: _vm.sidebar == true ? "block" : "hidden"
-              },
-              [
-                _c("h5", { staticClass: "text-xs font-bold text-gray-400" }, [
-                  _vm._v("Miscellaneous")
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "px-3 pt-4 pb-6" },
-              [
-                _c(
-                  "inertia-link",
-                  {
-                    staticClass:
-                      "block px-5 py-2 rounded-xl font-bold flex items-center mb-1 transition-all",
-                    class: _vm.route().current("routeLink")
-                      ? "text-white bg-messy-blue"
-                      : "text-gray-600",
-                    attrs: { href: _vm.route("product.index") }
-                  },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "h-10 w-5 text-center leading-10 text-lg",
-                        class: _vm.route().current("routeLink")
-                          ? "text-white"
-                          : "text-gray-400"
-                      },
-                      [_c("i", { staticClass: "far fa-envelope" })]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "span",
-                      {
-                        class:
-                          _vm.sidebar == true ? "inline-block ml-4" : "hidden"
-                      },
-                      [_vm._v("Credits")]
-                    )
-                  ]
-                )
-              ],
-              1
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "nav-group sticky bottom-0 bg-white" }, [
-            _c(
-              "div",
-              {
-                staticClass: "group-title px-8 pt-2",
-                class: _vm.sidebar == true ? "block" : "hidden"
-              },
-              [
-                _c("h5", { staticClass: "text-xs font-bold text-gray-400" }, [
-                  _vm._v("Account")
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "px-3 pb-2" },
-              [
-                _c(
-                  "inertia-link",
-                  {
-                    staticClass:
-                      "block px-5 py-2 rounded-xl font-bold flex items-center mb-1 transition-all",
-                    class: _vm.route().current("routeLink")
-                      ? "text-white bg-messy-blue"
-                      : "text-gray-600",
-                    attrs: { href: _vm.route("product.index") }
-                  },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "h-10 w-10 text-center leading-10 mr-4 text-lg text-messy-blue rounded-full overflow-hidden"
-                      },
-                      [
-                        _c("img", {
-                          attrs: { src: "https://via.placeholder.com/150" }
-                        })
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c("span")
-                  ]
-                )
-              ],
-              1
-            )
-          ])
-        ])
-      ]
-    ),
-    _vm._v(" "),
-    _c("div", { staticClass: "relative" }, [
-      _c("div", { staticClass: "relative" }, [
-        _c(
-          "header",
-          {
-            staticClass:
-              "py-2 px-1 bg-white border-b border-gray-200 h-16 fixed top-0 w-full z-20"
-          },
-          [
-            _c("div", { staticClass: "relative flex gap-4\t" }, [
-              _c("div", { staticClass: "left-pane flex" }, [
-                _c("div", { staticClass: "relative flex mr-2" }, [
-                  _c("div", { staticClass: "action-bar" }, [
-                    _c(
-                      "button",
-                      {
-                        staticClass:
-                          "p-3 h-12 w-12 hover:bg-gray-100 rounded-full mx-2 outline-none focus:outline-none",
-                        on: {
-                          click: function($event) {
-                            _vm.sidebar = !_vm.sidebar
-                          }
-                        }
-                      },
-                      [
-                        _c("i", { staticClass: "material-icons" }, [
-                          _vm._v("menu")
-                        ])
-                      ]
-                    )
-                  ]),
-                  _vm._v(" "),
+          _c("nav", [
+            _c("div", { staticClass: "nav-group" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "group-title px-9 pt-6",
+                  class: _vm.sidebar == true ? "block" : "hidden"
+                },
+                [
+                  _c("h5", { staticClass: "text-xs font-bold text-gray-400" }, [
+                    _vm._v("Admin Tools")
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "px-4 pt-4 pb-6" },
+                [
                   _c(
-                    "div",
-                    { staticClass: "logo" },
+                    "inertia-link",
+                    {
+                      staticClass:
+                        "block px-5 py-2 rounded-xl font-bold text-white flex items-center mb-1 transition-all",
+                      class: _vm.route().current("dashboard")
+                        ? "text-white bg-messy-blue "
+                        : "text-gray-600",
+                      attrs: { href: _vm.route("dashboard") }
+                    },
                     [
                       _c(
-                        "inertia-link",
-                        { attrs: { href: _vm.route("dashboard") } },
+                        "div",
+                        {
+                          staticClass:
+                            "h-10 w-5 text-center leading-10 text-lg",
+                          class: _vm.route().current("dashboard")
+                            ? "text-white"
+                            : "text-gray-400"
+                        },
                         [
-                          _c("div", { staticClass: "h-12" }, [
-                            _c("img", {
-                              staticClass: "h-full",
-                              attrs: {
-                                src: "sprites/easybessy_pos-logo_full.png"
-                              }
-                            })
-                          ])
-                        ]
-                      )
-                    ],
-                    1
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _vm._m(0),
-              _vm._v(" "),
-              _c("div", { staticClass: "right-pane flex-1 mx-2" }, [
-                _c("div", { staticClass: "relative flex justify-end" }, [
-                  _c("div", { staticClass: "relative" }, [
-                    _c(
-                      "button",
-                      {
-                        staticClass:
-                          "p-3 h-12 w-12 hover:bg-gray-100 rounded-full mx-2 outline-none focus:outline-none",
-                        on: {
-                          click: function($event) {
-                            _vm.accountModal = !_vm.accountModal
-                          }
-                        }
-                      },
-                      [
-                        _c("i", { staticClass: "material-icons" }, [
-                          _vm._v("settings")
-                        ])
-                      ]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "account p-2 relative" }, [
-                    _c(
-                      "button",
-                      {
-                        staticClass:
-                          "rounded-full overflow-hidden focus:outline-none outline-none ring-4 ring-transparent focus:ring-gray-100 h-8 w-8",
-                        on: {
-                          click: function($event) {
-                            _vm.accountModal = !_vm.accountModal
-                          }
-                        }
-                      },
-                      [
-                        _c("img", {
-                          staticClass: "h-8",
-                          attrs: { src: _vm.currentUser.image }
-                        })
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        directives: [
-                          {
-                            name: "show",
-                            rawName: "v-show",
-                            value: _vm.accountModal,
-                            expression: "accountModal"
-                          }
-                        ],
-                        staticClass:
-                          "absolute bg-white rounded-md shadow-md origin-top-right right-2 top-12 border w-96 transition-all"
-                      },
-                      [
-                        _c(
-                          "div",
-                          { staticClass: "px-4 py-6 border-b text-center" },
-                          [
-                            _c("div", { staticClass: "h-16" }, [
-                              _c("img", {
-                                staticClass: "h-14 w-14 rounded-full mx-auto",
-                                attrs: { src: _vm.currentUser.image }
-                              })
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "mt-2" }, [
-                              _c("h2", {
-                                staticClass: "font-medium text-lg",
-                                domProps: {
-                                  textContent: _vm._s(_vm.currentUser.name)
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("span", {
-                                staticClass: "text-sm",
-                                domProps: {
-                                  textContent: _vm._s(_vm.currentUser.email)
-                                }
-                              })
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "inertia-link",
-                              { attrs: { href: "/profile" } },
-                              [
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "inline-block py-2 px-4 border border-gray-300 rounded-full text-center mt-4 mx-10 hover:bg-gray-100"
-                                  },
-                                  [
-                                    _c(
-                                      "span",
-                                      { staticClass: "font-medium text-xs" },
-                                      [_vm._v("Manage your Messy account")]
-                                    )
-                                  ]
-                                )
-                              ]
-                            )
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "p-6" }, [
                           _c(
-                            "form",
-                            {
-                              staticClass: "text-center",
-                              attrs: {
-                                action: _vm.route("logout"),
-                                method: "post"
-                              }
-                            },
-                            [
-                              _vm._m(1),
-                              _vm._v(" "),
-                              _c("input", {
-                                attrs: { type: "hidden", name: "_token" },
-                                domProps: { value: _vm.csrf }
-                              })
-                            ]
+                            "i",
+                            { staticClass: "material-icons leading-10" },
+                            [_vm._v("dashboard")]
                           )
-                        ])
-                      ]
-                    )
-                  ])
-                ])
-              ])
-            ])
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "relative",
-            class: _vm.sidebar == true ? "ml-64" : "ml-24"
-          },
-          [
-            _c("div", { staticClass: "mx-auto my-16 text-gray-700" }, [
-              _c("div", { staticClass: "relative bg-blue-500 text-white" }, [
-                _c("div", { staticClass: "container mx-auto" }, [
-                  _c("div", { staticClass: "pt-4" }, [
-                    _c("div", { staticClass: "header flex justify-between" }, [
-                      _c("div", { staticClass: "header py-6" }, [
-                        _c(
-                          "h2",
-                          { staticClass: "text-3xl font-bold my-4" },
-                          [_vm._t("header")],
-                          2
-                        )
-                      ]),
+                        ]
+                      ),
                       _vm._v(" "),
                       _c(
+                        "span",
+                        {
+                          class:
+                            _vm.sidebar == true
+                              ? "inline-block ml-4 dark:text-white"
+                              : "hidden"
+                        },
+                        [_vm._v("Overview")]
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "inertia-link",
+                    {
+                      staticClass:
+                        "block px-5 py-2 rounded-xl font-bold flex items-center mb-1",
+                      class: _vm.route().current("product.index")
+                        ? "text-white bg-messy-blue"
+                        : "text-gray-600",
+                      attrs: { href: _vm.route("product.index") }
+                    },
+                    [
+                      _c(
                         "div",
-                        { staticClass: "action py-10" },
-                        [_vm._t("actions")],
-                        2
+                        {
+                          staticClass:
+                            "h-10 w-5 text-center leading-10 text-lg",
+                          class: _vm.route().current("product.index")
+                            ? "text-white"
+                            : "text-gray-400"
+                        },
+                        [_c("i", { staticClass: "fas fa-shopping-bag" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        {
+                          class:
+                            _vm.sidebar == true
+                              ? "inline-block ml-4 dark:text-white"
+                              : "hidden"
+                        },
+                        [_vm._v("Products")]
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "inertia-link",
+                    {
+                      staticClass:
+                        "block px-5 py-2 rounded-xl font-bold flex items-center mb-1 transition-all",
+                      class: _vm.route().current("branch.index")
+                        ? "text-white bg-messy-blue"
+                        : "text-gray-600",
+                      attrs: { href: _vm.route("branch.index") }
+                    },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "h-10 w-5 text-center leading-10 text-lg",
+                          class: _vm.route().current("branch.index")
+                            ? "text-white"
+                            : "text-gray-400"
+                        },
+                        [_c("i", { staticClass: "fas fa-store" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        {
+                          class:
+                            _vm.sidebar == true
+                              ? "inline-block ml-4 dark:text-white"
+                              : "hidden"
+                        },
+                        [_vm._v("Branches")]
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "inertia-link",
+                    {
+                      staticClass:
+                        "block px-5 py-2 rounded-xl font-bold flex items-center mb-1",
+                      class: _vm.route().current("stocks.index")
+                        ? "text-white bg-messy-blue"
+                        : "text-gray-600",
+                      attrs: { href: _vm.route("stocks.index") }
+                    },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "h-10 w-5 text-center leading-10 text-lg",
+                          class: _vm.route().current("stocks.index")
+                            ? "text-white"
+                            : "text-gray-400"
+                        },
+                        [_c("i", { staticClass: "fas fa-box" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        {
+                          class:
+                            _vm.sidebar == true
+                              ? "inline-block ml-4 dark:text-white"
+                              : "hidden"
+                        },
+                        [_vm._v("Stocks")]
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "inertia-link",
+                    {
+                      staticClass:
+                        "block px-5 py-2 rounded-xl font-bold flex items-center mb-1 transition-all",
+                      class: _vm.route().current("linkRoute")
+                        ? "text-white bg-messy-blue"
+                        : "text-gray-600",
+                      attrs: { href: _vm.route("product.index") }
+                    },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "h-10 w-5 text-center leading-10 text-lg",
+                          class: _vm.route().current("routeLink")
+                            ? "text-white"
+                            : "text-gray-400"
+                        },
+                        [_c("i", { staticClass: "fas fa-user" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        {
+                          class:
+                            _vm.sidebar == true
+                              ? "inline-block ml-4 dark:text-white"
+                              : "hidden"
+                        },
+                        [_vm._v("Users")]
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "inertia-link",
+                    {
+                      staticClass:
+                        "block px-5 py-2 rounded-xl font-bold flex items-center mb-1 transition-all",
+                      class: _vm.route().current("linkRoute")
+                        ? "text-white bg-messy-blue"
+                        : "text-gray-600",
+                      attrs: { href: _vm.route("product.index") }
+                    },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "h-10 w-5 text-center leading-10 text-xl",
+                          class: _vm.route().current("routeLink")
+                            ? "text-white"
+                            : "text-gray-400"
+                        },
+                        [_c("i", { staticClass: "fas fa-clipboard-list" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        {
+                          class:
+                            _vm.sidebar == true
+                              ? "inline-block ml-4 dark:text-white"
+                              : "hidden"
+                        },
+                        [_vm._v("Transactions")]
+                      )
+                    ]
+                  )
+                ],
+                1
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "nav-group" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "group-title px-8 ",
+                  class: _vm.sidebar == true ? "block" : "hidden"
+                },
+                [
+                  _c("h5", { staticClass: "text-xs font-bold text-gray-400" }, [
+                    _vm._v("More")
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "px-3 pt-4 pb-6" },
+                [
+                  _c(
+                    "inertia-link",
+                    {
+                      staticClass:
+                        "block px-5 py-2 rounded-xl font-bold flex items-center mb-1 transition-all",
+                      class: _vm.route().current("routeLink")
+                        ? "text-white bg-messy-blue"
+                        : "text-gray-600",
+                      attrs: { href: _vm.route("product.index") }
+                    },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "h-10 w-5 text-center leading-10 text-lg",
+                          class: _vm.route().current("routeLink")
+                            ? "text-white"
+                            : "text-gray-400"
+                        },
+                        [_c("i", { staticClass: "far fa-envelope" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        {
+                          class:
+                            _vm.sidebar == true
+                              ? "inline-block ml-4 dark:text-white"
+                              : "hidden"
+                        },
+                        [_vm._v("Messages")]
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "inertia-link",
+                    {
+                      staticClass:
+                        "block px-5 py-2 rounded-xl font-bold flex items-center mb-1 transition-all",
+                      class: _vm.route().current("routeLink")
+                        ? "text-white bg-messy-blue"
+                        : "text-gray-600",
+                      attrs: { href: _vm.route("product.index") }
+                    },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "h-10 w-5 text-center leading-10 text-lg",
+                          class: _vm.route().current("routeLink")
+                            ? "text-white"
+                            : "text-gray-400"
+                        },
+                        [_c("i", { staticClass: "far fa-bell" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        {
+                          class:
+                            _vm.sidebar == true
+                              ? "inline-block ml-4 dark:text-white"
+                              : "hidden"
+                        },
+                        [_vm._v("Notifications")]
+                      )
+                    ]
+                  )
+                ],
+                1
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "nav-group" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "group-title px-8 ",
+                  class: _vm.sidebar == true ? "block" : "hidden"
+                },
+                [
+                  _c("h5", { staticClass: "text-xs font-bold text-gray-400" }, [
+                    _vm._v("Miscellaneous")
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "px-3 pt-4 pb-6" },
+                [
+                  _c(
+                    "inertia-link",
+                    {
+                      staticClass:
+                        "block px-5 py-2 rounded-xl font-bold flex items-center mb-1 transition-all",
+                      class: _vm.route().current("routeLink")
+                        ? "text-white bg-messy-blue"
+                        : "text-gray-600",
+                      attrs: { href: _vm.route("product.index") }
+                    },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "h-10 w-5 text-center leading-10 text-lg",
+                          class: _vm.route().current("routeLink")
+                            ? "text-white"
+                            : "text-gray-400"
+                        },
+                        [_c("i", { staticClass: "far fa-envelope" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        {
+                          class:
+                            _vm.sidebar == true
+                              ? "inline-block ml-4 dark:text-white"
+                              : "hidden"
+                        },
+                        [_vm._v("Credits")]
+                      )
+                    ]
+                  )
+                ],
+                1
+              )
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "relative" }, [
+        _c("div", { staticClass: "relative" }, [
+          _c(
+            "header",
+            {
+              staticClass:
+                "py-2 px-1 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-800 h-16 fixed top-0 w-full z-20"
+            },
+            [
+              _c("div", { staticClass: "relative flex gap-4\t" }, [
+                _c("div", { staticClass: "left-pane flex" }, [
+                  _c("div", { staticClass: "relative flex mr-2" }, [
+                    _c("div", { staticClass: "action-bar" }, [
+                      _c(
+                        "button",
+                        {
+                          staticClass:
+                            "p-3 h-12 w-12 hover:bg-gray-100 rounded-full mx-2 outline-none focus:outline-none dark:text-white dark:hover:text-gray-700",
+                          on: {
+                            click: function($event) {
+                              _vm.sidebar = !_vm.sidebar
+                            }
+                          }
+                        },
+                        [
+                          _c("i", { staticClass: "material-icons" }, [
+                            _vm._v("menu")
+                          ])
+                        ]
                       )
                     ]),
                     _vm._v(" "),
                     _c(
                       "div",
-                      { staticClass: "action pt-2 sticky top-16" },
-                      [_vm._t("tabs")],
-                      2
+                      { staticClass: "logo" },
+                      [
+                        _c(
+                          "inertia-link",
+                          { attrs: { href: _vm.route("dashboard") } },
+                          [
+                            _c("div", { staticClass: "h-12" }, [
+                              _c("img", {
+                                staticClass: "h-full",
+                                attrs: {
+                                  src: "sprites/easybessy_pos-logo_full.png"
+                                }
+                              })
+                            ])
+                          ]
+                        )
+                      ],
+                      1
                     )
                   ])
+                ]),
+                _vm._v(" "),
+                _vm._m(0),
+                _vm._v(" "),
+                _c("div", { staticClass: "right-pane flex-1 mx-2" }, [
+                  _c("div", { staticClass: "relative flex justify-end" }, [
+                    _c("div", { staticClass: "relative" }, [
+                      _c(
+                        "button",
+                        {
+                          staticClass:
+                            "p-3 h-12 w-12 hover:bg-gray-100 rounded-full mx-2 outline-none focus:outline-none dark:text-white dark:hover:text-gray-700",
+                          on: {
+                            click: function($event) {
+                              _vm.accountModal = !_vm.accountModal
+                            }
+                          }
+                        },
+                        [
+                          _c("i", { staticClass: "material-icons" }, [
+                            _vm._v("settings")
+                          ])
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "account p-2 relative" }, [
+                      _c(
+                        "button",
+                        {
+                          staticClass:
+                            "rounded-full overflow-hidden focus:outline-none outline-none ring-4 ring-transparent focus:ring-gray-100 h-8 w-8",
+                          on: {
+                            click: function($event) {
+                              _vm.accountModal = !_vm.accountModal
+                            }
+                          }
+                        },
+                        [
+                          _c("img", {
+                            staticClass: "h-8",
+                            attrs: { src: _vm.currentUser.image }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value: _vm.accountModal,
+                              expression: "accountModal"
+                            }
+                          ],
+                          staticClass:
+                            "fixed right-0 md:right-2 w-full bg-white rounded-md shadow-md origin-top-right top-14 md:top-12 dark:border-gray-800 dark:text-gray-700 w-96 transition-all"
+                        },
+                        [
+                          _c(
+                            "div",
+                            { staticClass: "px-4 py-6 border-b text-center" },
+                            [
+                              _c("div", { staticClass: "h-16" }, [
+                                _c("img", {
+                                  staticClass: "h-14 w-14 rounded-full mx-auto",
+                                  attrs: { src: _vm.currentUser.image }
+                                })
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "mt-2" }, [
+                                _c("h2", {
+                                  staticClass: "font-medium text-lg",
+                                  domProps: {
+                                    textContent: _vm._s(_vm.currentUser.name)
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _c("span", {
+                                  staticClass: "text-sm",
+                                  domProps: {
+                                    textContent: _vm._s(_vm.currentUser.email)
+                                  }
+                                })
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "inertia-link",
+                                { attrs: { href: "/profile" } },
+                                [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "inline-block py-2 px-4 border border-gray-300 rounded-full text-center mt-4 mx-10 hover:bg-gray-100"
+                                    },
+                                    [
+                                      _c(
+                                        "span",
+                                        { staticClass: "font-medium text-xs" },
+                                        [_vm._v("Manage your Messy account")]
+                                      )
+                                    ]
+                                  )
+                                ]
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "p-6" }, [
+                            _c(
+                              "form",
+                              {
+                                staticClass: "text-center",
+                                attrs: {
+                                  action: _vm.route("logout"),
+                                  method: "post"
+                                }
+                              },
+                              [
+                                _vm._m(1),
+                                _vm._v(" "),
+                                _c("input", {
+                                  attrs: { type: "hidden", name: "_token" },
+                                  domProps: { value: _vm.csrf }
+                                })
+                              ]
+                            )
+                          ])
+                        ]
+                      )
+                    ])
+                  ])
                 ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "relative mt-10 mb-4" }, [
-                _c(
-                  "div",
-                  { staticClass: "container mx-auto" },
-                  [_vm._t("content")],
-                  2
-                )
               ])
-            ])
-          ]
-        )
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "relative transition-all",
+              class: _vm.sidebar == true ? "md:ml-64" : "md:ml-24"
+            },
+            [
+              _c("div", { staticClass: "mx-auto my-16 text-gray-700" }, [
+                _c("div", { staticClass: "relative bg-blue-500 text-white" }, [
+                  _c("div", { staticClass: "container mx-auto px-6 md:px-0" }, [
+                    _c("div", { staticClass: "pt-4" }, [
+                      _c(
+                        "div",
+                        { staticClass: "header flex justify-between" },
+                        [
+                          _c("div", { staticClass: "header py-6" }, [
+                            _c(
+                              "h2",
+                              { staticClass: "text-3xl font-bold my-4" },
+                              [_vm._t("header")],
+                              2
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "action py-10" },
+                            [_vm._t("actions")],
+                            2
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "action pt-2 sticky top-16" },
+                        [_vm._t("tabs")],
+                        2
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "relative mt-10 mb-4" }, [
+                  _c(
+                    "div",
+                    { staticClass: "container mx-auto px-6 md:px-0" },
+                    [_vm._t("content")],
+                    2
+                  )
+                ])
+              ])
+            ]
+          )
+        ])
       ])
-    ])
-  ])
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "search flex-1" }, [
+    return _c("div", { staticClass: "search flex-1 hidden md:block" }, [
       _c("div", { staticClass: "relative flex" }, [
         _c(
           "form",
           {
             staticClass:
-              "search-box w-full h-12 rounded-md bg-gray-100 py-2 px-4 flex",
+              "search-box w-full h-12 rounded-md bg-gray-100 dark:bg-gray-900 dark:text-white py-2 px-4 flex",
             staticStyle: { "max-width": "720px" },
             attrs: { method: "get" }
           },
@@ -53156,7 +53234,45 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("dash-layout")
+  return _c("dash-layout", {
+    scopedSlots: _vm._u([
+      {
+        key: "header",
+        fn: function() {
+          return [_vm._v("\n            Branches\n        ")]
+        },
+        proxy: true
+      },
+      {
+        key: "actions",
+        fn: function() {
+          return [
+            _c(
+              "button",
+              {
+                staticClass:
+                  "px-4 py-2 ml-4 h-10 bg-white hover:bg-gray-100 text-blue-500 font-bold rounded-md outline-none focus:outline-none transition-all text-sm",
+                attrs: { type: "button" },
+                on: {
+                  click: function($event) {
+                    _vm.createModal = true
+                  }
+                }
+              },
+              [
+                _c("div", { staticClass: "flex items-center" }, [
+                  _c("i", { staticClass: "material-icons" }, [_vm._v("add")]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "ml-2 mt-1" }, [_vm._v("Add")])
+                ])
+              ]
+            )
+          ]
+        },
+        proxy: true
+      }
+    ])
+  })
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -53194,7 +53310,16 @@ var render = function() {
       {
         key: "content",
         fn: function() {
-          return [_c("Chart")]
+          return [
+            _c("apexcharts", {
+              attrs: {
+                width: "500",
+                type: "pie",
+                options: _vm.chartOption,
+                series: _vm.series1
+              }
+            })
+          ]
         },
         proxy: true
       }
@@ -54660,7 +54785,7 @@ var render = function() {
                                 "h4",
                                 {
                                   staticClass:
-                                    "text-xs text-gray-500 font-bold mb-4"
+                                    "text-xs dark:text-white font-bold mb-4"
                                 },
                                 [_vm._v("Branches")]
                               ),
@@ -54673,7 +54798,7 @@ var render = function() {
                                       "button",
                                       {
                                         staticClass:
-                                          "border-l-2 pl-4 outline-none foucs:outline-none",
+                                          "dark:text-white border-l-2 pl-4 outline-none foucs:outline-none",
                                         class:
                                           _vm.branchFilter == "All"
                                             ? "border-blue-500"
@@ -54705,7 +54830,7 @@ var render = function() {
                                         "button",
                                         {
                                           staticClass:
-                                            "border-l-2 pl-4 outline-none foucs:outline-none",
+                                            "dark:text-white border-l-2 pl-4 outline-none foucs:outline-none",
                                           class:
                                             branch.name == _vm.branchFilter
                                               ? "border-blue-500"
@@ -54908,7 +55033,7 @@ var render = function() {
                         }
                       ],
                       staticClass:
-                        "h-screen w-screen bg-gray-200 bg-opacity-50 flex top-0 fixed left-0 scale-100 justify-items-center items-center"
+                        "h-screen w-screen bg-gray-200 bg-opacity-50 dark:bg-gray-800 flex top-0 fixed left-0 scale-100 justify-items-center items-center"
                     },
                     [
                       _c(
@@ -55356,203 +55481,107 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("transition", { attrs: { name: "show" } }, [
-                  _vm.addStock == true
-                    ? _c(
-                        "div",
+                  _c(
+                    "div",
+                    {
+                      directives: [
                         {
-                          staticClass:
-                            "h-screen w-screen bg-gray-200 bg-opacity-50 flex top-0 fixed left-0 scale-100 justify-items-center items-center"
-                        },
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.addStock == true,
+                          expression: "addStock == true"
+                        }
+                      ],
+                      staticClass:
+                        "h-screen w-screen bg-gray-200 bg-opacity-50 dark:bg-gray-800 flex top-0 fixed left-0 scale-100 justify-items-center items-center"
+                    },
+                    [
+                      _c(
+                        "div",
+                        { staticClass: "flex-auto" },
                         [
-                          _c(
-                            "div",
-                            { staticClass: "flex-auto" },
-                            [
-                              _c("transition", { attrs: { name: "modal" } }, [
-                                _c(
-                                  "div",
+                          _c("transition", { attrs: { name: "modal" } }, [
+                            _c(
+                              "div",
+                              {
+                                directives: [
                                   {
-                                    directives: [
-                                      {
-                                        name: "show",
-                                        rawName: "v-show",
-                                        value: _vm.addStock == true,
-                                        expression: "addStock == true"
+                                    name: "show",
+                                    rawName: "v-show",
+                                    value: _vm.addStock == true,
+                                    expression: "addStock == true"
+                                  }
+                                ],
+                                staticClass:
+                                  "w-full mx-auto rounded-xl shadow-md bg-white scale-100 overflow-hidden",
+                                staticStyle: { "max-width": "500px" }
+                              },
+                              [
+                                _c(
+                                  "form",
+                                  {
+                                    on: {
+                                      submit: function($event) {
+                                        $event.preventDefault()
+                                        return _vm.stockStore()
                                       }
-                                    ],
-                                    staticClass:
-                                      "w-full mx-auto rounded-xl shadow-md bg-white scale-100 overflow-hidden",
-                                    staticStyle: { "max-width": "500px" }
+                                    }
                                   },
                                   [
                                     _c(
-                                      "form",
-                                      {
-                                        on: {
-                                          submit: function($event) {
-                                            $event.preventDefault()
-                                            return _vm.stockStore()
-                                          }
-                                        }
-                                      },
+                                      "div",
+                                      { staticClass: "steps-content p-8" },
                                       [
-                                        _c(
-                                          "div",
-                                          { staticClass: "steps-content p-8" },
-                                          [
-                                            _c("div", [
-                                              _c(
-                                                "h3",
+                                        _c("div", [
+                                          _c(
+                                            "h3",
+                                            { staticClass: "mb-4 text-2xl" },
+                                            [
+                                              _vm._v(
+                                                "\n\t\t\t\t\t\t\t\t\t\t\t\tAdd stock\n\t\t\t\t\t\t\t\t\t\t\t"
+                                              )
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _vm.error
+                                            ? _c(
+                                                "div",
                                                 {
-                                                  staticClass: "mb-4 text-2xl"
+                                                  staticClass:
+                                                    "p-4 bg-red-500 rounded-md"
                                                 },
                                                 [
-                                                  _vm._v(
-                                                    "\n\t\t\t\t\t\t\t\t\t\t\t\tAdd stock\n\t\t\t\t\t\t\t\t\t\t\t"
-                                                  )
-                                                ]
-                                              ),
-                                              _vm._v(" "),
-                                              _vm.error
-                                                ? _c(
-                                                    "div",
-                                                    {
-                                                      staticClass:
-                                                        "p-4 bg-red-500 rounded-md"
-                                                    },
-                                                    [
-                                                      _c("span", {
-                                                        staticClass:
-                                                          "font-bold text-white",
-                                                        domProps: {
-                                                          textContent: _vm._s(
-                                                            _vm.error
-                                                          )
-                                                        }
-                                                      })
-                                                    ]
-                                                  )
-                                                : _vm._e(),
-                                              _vm._v(" "),
-                                              _c(
-                                                "div",
-                                                { staticClass: "flex gap-4" },
-                                                [
-                                                  _c(
-                                                    "div",
-                                                    {
-                                                      staticClass: "mt-4 flex-1"
-                                                    },
-                                                    [
-                                                      _c(
-                                                        "label",
-                                                        {
-                                                          staticClass:
-                                                            "font-bold mb-4 block",
-                                                          attrs: {
-                                                            for: "stockBranch"
-                                                          }
-                                                        },
-                                                        [_vm._v("Branch")]
-                                                      ),
-                                                      _vm._v(" "),
-                                                      _c(
-                                                        "select",
-                                                        {
-                                                          directives: [
-                                                            {
-                                                              name: "model",
-                                                              rawName:
-                                                                "v-model",
-                                                              value:
-                                                                _vm.stockForm
-                                                                  .branch,
-                                                              expression:
-                                                                "stockForm.branch"
-                                                            }
-                                                          ],
-                                                          staticClass:
-                                                            "px-3 py-2 w-full border-2 border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 transition-colors",
-                                                          attrs: {
-                                                            name: "stockBranch",
-                                                            id: "stockBranch",
-                                                            placeholder:
-                                                              "Product Name"
-                                                          },
-                                                          on: {
-                                                            change: function(
-                                                              $event
-                                                            ) {
-                                                              var $$selectedVal = Array.prototype.filter
-                                                                .call(
-                                                                  $event.target
-                                                                    .options,
-                                                                  function(o) {
-                                                                    return o.selected
-                                                                  }
-                                                                )
-                                                                .map(function(
-                                                                  o
-                                                                ) {
-                                                                  var val =
-                                                                    "_value" in
-                                                                    o
-                                                                      ? o._value
-                                                                      : o.value
-                                                                  return val
-                                                                })
-                                                              _vm.$set(
-                                                                _vm.stockForm,
-                                                                "branch",
-                                                                $event.target
-                                                                  .multiple
-                                                                  ? $$selectedVal
-                                                                  : $$selectedVal[0]
-                                                              )
-                                                            }
-                                                          }
-                                                        },
-                                                        _vm._l(
-                                                          _vm.branches,
-                                                          function(branch) {
-                                                            return _c(
-                                                              "option",
-                                                              {
-                                                                key: branch.id,
-                                                                domProps: {
-                                                                  value:
-                                                                    branch.id
-                                                                }
-                                                              },
-                                                              [
-                                                                _vm._v(
-                                                                  _vm._s(
-                                                                    branch.name
-                                                                  )
-                                                                )
-                                                              ]
-                                                            )
-                                                          }
-                                                        ),
-                                                        0
+                                                  _c("span", {
+                                                    staticClass:
+                                                      "font-bold text-white",
+                                                    domProps: {
+                                                      textContent: _vm._s(
+                                                        _vm.error
                                                       )
-                                                    ]
-                                                  )
+                                                    }
+                                                  })
                                                 ]
-                                              ),
-                                              _vm._v(" "),
+                                              )
+                                            : _vm._e(),
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            { staticClass: "flex gap-4" },
+                                            [
                                               _c(
                                                 "div",
-                                                { staticClass: "mt-4" },
+                                                { staticClass: "mt-4 flex-1" },
                                                 [
                                                   _c(
                                                     "label",
                                                     {
                                                       staticClass:
                                                         "font-bold mb-4 block",
-                                                      attrs: { for: "product" }
+                                                      attrs: {
+                                                        for: "stockBranch"
+                                                      }
                                                     },
-                                                    [_vm._v("Product")]
+                                                    [_vm._v("Branch")]
                                                   ),
                                                   _vm._v(" "),
                                                   _c(
@@ -55564,16 +55593,16 @@ var render = function() {
                                                           rawName: "v-model",
                                                           value:
                                                             _vm.stockForm
-                                                              .product,
+                                                              .branch,
                                                           expression:
-                                                            "stockForm.product"
+                                                            "stockForm.branch"
                                                         }
                                                       ],
                                                       staticClass:
                                                         "px-3 py-2 w-full border-2 border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 transition-colors",
                                                       attrs: {
-                                                        name: "product",
-                                                        id: "product",
+                                                        name: "stockBranch",
+                                                        id: "stockBranch",
                                                         placeholder:
                                                           "Product Name"
                                                       },
@@ -55598,7 +55627,7 @@ var render = function() {
                                                             })
                                                           _vm.$set(
                                                             _vm.stockForm,
-                                                            "product",
+                                                            "branch",
                                                             $event.target
                                                               .multiple
                                                               ? $$selectedVal
@@ -55608,20 +55637,20 @@ var render = function() {
                                                       }
                                                     },
                                                     _vm._l(
-                                                      _vm.products,
-                                                      function(product) {
+                                                      _vm.branches,
+                                                      function(branch) {
                                                         return _c(
                                                           "option",
                                                           {
-                                                            key: product.id,
+                                                            key: branch.id,
                                                             domProps: {
-                                                              value: product.id
+                                                              value: branch.id
                                                             }
                                                           },
                                                           [
                                                             _vm._v(
                                                               _vm._s(
-                                                                product.name
+                                                                branch.name
                                                               )
                                                             )
                                                           ]
@@ -55631,130 +55660,193 @@ var render = function() {
                                                     0
                                                   )
                                                 ]
-                                              ),
-                                              _vm._v(" "),
-                                              _c(
-                                                "div",
-                                                { staticClass: "mt-4" },
-                                                [
-                                                  _c(
-                                                    "label",
-                                                    {
-                                                      staticClass:
-                                                        "font-bold mb-4 block",
-                                                      attrs: { for: "amount" }
-                                                    },
-                                                    [_vm._v("Amount")]
-                                                  ),
-                                                  _vm._v(" "),
-                                                  _c(
-                                                    "div",
-                                                    { staticClass: "relative" },
-                                                    [
-                                                      _c("input", {
-                                                        directives: [
-                                                          {
-                                                            name: "model",
-                                                            rawName: "v-model",
-                                                            value:
-                                                              _vm.stockForm
-                                                                .amount,
-                                                            expression:
-                                                              "stockForm.amount"
-                                                          }
-                                                        ],
-                                                        staticClass:
-                                                          "px-3 py-2 pl-16 w-full border-2 border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 transition-colors",
-                                                        attrs: {
-                                                          type: "text",
-                                                          id: "amount",
-                                                          name: "amount",
-                                                          placeholder: "Amount"
-                                                        },
-                                                        domProps: {
-                                                          value:
-                                                            _vm.stockForm.amount
-                                                        },
-                                                        on: {
-                                                          input: function(
-                                                            $event
-                                                          ) {
-                                                            if (
-                                                              $event.target
-                                                                .composing
-                                                            ) {
-                                                              return
-                                                            }
-                                                            _vm.$set(
-                                                              _vm.stockForm,
-                                                              "amount",
-                                                              $event.target
-                                                                .value
-                                                            )
-                                                          }
-                                                        }
-                                                      }),
-                                                      _vm._v(" "),
-                                                      _c(
-                                                        "span",
-                                                        {
-                                                          staticClass:
-                                                            "rounded-md font-bold top-1 h-10 left-2 leading-9 absolute h-9 w-12 text-center text-gray-700"
-                                                        },
-                                                        [_vm._v("Php")]
-                                                      )
-                                                    ]
-                                                  )
-                                                ]
                                               )
-                                            ])
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "px-8 py-6 mt-4 bg-gray-100 sticky bottom-0"
-                                          },
-                                          [
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c("div", { staticClass: "mt-4" }, [
                                             _c(
-                                              "div",
+                                              "label",
                                               {
-                                                staticClass: "flex justify-end"
+                                                staticClass:
+                                                  "font-bold mb-4 block",
+                                                attrs: { for: "product" }
                                               },
-                                              [
-                                                _c(
-                                                  "button",
+                                              [_vm._v("Product")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "select",
+                                              {
+                                                directives: [
                                                   {
-                                                    staticClass:
-                                                      "w-32 focus:outline-none border border-transparent py-2 px-5 rounded-lg shadow-sm text-center bg-white hover:bg-gray-200 font-medium mr-4",
-                                                    attrs: { type: "button" },
-                                                    on: {
-                                                      click: function($event) {
-                                                        _vm.addStock = false
-                                                      }
+                                                    name: "model",
+                                                    rawName: "v-model",
+                                                    value:
+                                                      _vm.stockForm.product,
+                                                    expression:
+                                                      "stockForm.product"
+                                                  }
+                                                ],
+                                                staticClass:
+                                                  "px-3 py-2 w-full border-2 border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 transition-colors",
+                                                attrs: {
+                                                  name: "product",
+                                                  id: "product",
+                                                  placeholder: "Product Name"
+                                                },
+                                                on: {
+                                                  change: function($event) {
+                                                    var $$selectedVal = Array.prototype.filter
+                                                      .call(
+                                                        $event.target.options,
+                                                        function(o) {
+                                                          return o.selected
+                                                        }
+                                                      )
+                                                      .map(function(o) {
+                                                        var val =
+                                                          "_value" in o
+                                                            ? o._value
+                                                            : o.value
+                                                        return val
+                                                      })
+                                                    _vm.$set(
+                                                      _vm.stockForm,
+                                                      "product",
+                                                      $event.target.multiple
+                                                        ? $$selectedVal
+                                                        : $$selectedVal[0]
+                                                    )
+                                                  }
+                                                }
+                                              },
+                                              _vm._l(_vm.products, function(
+                                                product
+                                              ) {
+                                                return _c(
+                                                  "option",
+                                                  {
+                                                    key: product.id,
+                                                    domProps: {
+                                                      value: product.id
                                                     }
                                                   },
-                                                  [
-                                                    _vm._v(
-                                                      "\n\t\t\t\t\t\t\t\t\t\t\tCancel\n\t\t\t\t\t\t\t\t\t\t"
-                                                    )
-                                                  ]
-                                                ),
+                                                  [_vm._v(_vm._s(product.name))]
+                                                )
+                                              }),
+                                              0
+                                            )
+                                          ]),
+                                          _vm._v(" "),
+                                          _c("div", { staticClass: "mt-4" }, [
+                                            _c(
+                                              "label",
+                                              {
+                                                staticClass:
+                                                  "font-bold mb-4 block",
+                                                attrs: { for: "amount" }
+                                              },
+                                              [_vm._v("Amount")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "div",
+                                              { staticClass: "relative" },
+                                              [
+                                                _c("input", {
+                                                  directives: [
+                                                    {
+                                                      name: "model",
+                                                      rawName: "v-model",
+                                                      value:
+                                                        _vm.stockForm.amount,
+                                                      expression:
+                                                        "stockForm.amount"
+                                                    }
+                                                  ],
+                                                  staticClass:
+                                                    "px-3 py-2 pl-16 w-full border-2 border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 transition-colors",
+                                                  attrs: {
+                                                    type: "text",
+                                                    id: "amount",
+                                                    name: "amount",
+                                                    placeholder: "Amount"
+                                                  },
+                                                  domProps: {
+                                                    value: _vm.stockForm.amount
+                                                  },
+                                                  on: {
+                                                    input: function($event) {
+                                                      if (
+                                                        $event.target.composing
+                                                      ) {
+                                                        return
+                                                      }
+                                                      _vm.$set(
+                                                        _vm.stockForm,
+                                                        "amount",
+                                                        $event.target.value
+                                                      )
+                                                    }
+                                                  }
+                                                }),
                                                 _vm._v(" "),
                                                 _c(
-                                                  "button",
+                                                  "span",
                                                   {
                                                     staticClass:
-                                                      "w-32 focus:outline-none border border-transparent py-2 px-5 rounded-lg shadow-sm text-center text-white bg-blue-500 hover:bg-blue-600 font-medium",
-                                                    attrs: { type: "submit" }
+                                                      "rounded-md font-bold top-1 h-10 left-2 leading-9 absolute h-9 w-12 text-center text-gray-700"
                                                   },
-                                                  [
-                                                    _vm._v(
-                                                      "\n\t\t\t\t\t\t\t\t\t\t\tAdd\n\t\t\t\t\t\t\t\t\t\t"
-                                                    )
-                                                  ]
+                                                  [_vm._v("Php")]
+                                                )
+                                              ]
+                                            )
+                                          ])
+                                        ])
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "px-8 py-6 mt-4 bg-gray-100 sticky bottom-0"
+                                      },
+                                      [
+                                        _c(
+                                          "div",
+                                          { staticClass: "flex justify-end" },
+                                          [
+                                            _c(
+                                              "button",
+                                              {
+                                                staticClass:
+                                                  "w-32 focus:outline-none border border-transparent py-2 px-5 rounded-lg shadow-sm text-center bg-white hover:bg-gray-200 font-medium mr-4",
+                                                attrs: { type: "button" },
+                                                on: {
+                                                  click: function($event) {
+                                                    _vm.addStock = false
+                                                  }
+                                                }
+                                              },
+                                              [
+                                                _vm._v(
+                                                  "\n\t\t\t\t\t\t\t\t\t\t\tCancel\n\t\t\t\t\t\t\t\t\t\t"
+                                                )
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "button",
+                                              {
+                                                staticClass:
+                                                  "w-32 focus:outline-none border border-transparent py-2 px-5 rounded-lg shadow-sm text-center text-white bg-blue-500 hover:bg-blue-600 font-medium",
+                                                attrs: { type: "submit" }
+                                              },
+                                              [
+                                                _vm._v(
+                                                  "\n\t\t\t\t\t\t\t\t\t\t\tAdd\n\t\t\t\t\t\t\t\t\t\t"
                                                 )
                                               ]
                                             )
@@ -55764,16 +55856,79 @@ var render = function() {
                                     )
                                   ]
                                 )
-                              ])
-                            ],
-                            1
-                          )
-                        ]
+                              ]
+                            )
+                          ])
+                        ],
+                        1
                       )
-                    : _vm._e()
+                    ]
+                  )
                 ])
               ],
               1
+            )
+          ]
+        },
+        proxy: true
+      }
+    ])
+  })
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard/UserManagement/Index.vue?vue&type=template&id=6da78075&":
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/Dashboard/UserManagement/Index.vue?vue&type=template&id=6da78075& ***!
+  \****************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("dash-layout", {
+    scopedSlots: _vm._u([
+      {
+        key: "header",
+        fn: function() {
+          return [_vm._v("\n            User Management\n        ")]
+        },
+        proxy: true
+      },
+      {
+        key: "actions",
+        fn: function() {
+          return [
+            _c(
+              "button",
+              {
+                staticClass:
+                  "px-4 py-2 ml-4 h-10 bg-white hover:bg-gray-100 text-blue-500 font-bold rounded-md outline-none focus:outline-none transition-all text-sm",
+                attrs: { type: "button" },
+                on: {
+                  click: function($event) {
+                    _vm.createModal = true
+                  }
+                }
+              },
+              [
+                _c("div", { staticClass: "flex items-center" }, [
+                  _c("i", { staticClass: "material-icons" }, [_vm._v("add")]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "ml-2 mt-1" }, [_vm._v("Add")])
+                ])
+              ]
             )
           ]
         },
@@ -72466,6 +72621,8 @@ var map = {
 	"./Dashboard/Inventory/Products/Index.vue": "./resources/js/Pages/Dashboard/Inventory/Products/Index.vue",
 	"./Dashboard/Inventory/Stocks/Index": "./resources/js/Pages/Dashboard/Inventory/Stocks/Index.vue",
 	"./Dashboard/Inventory/Stocks/Index.vue": "./resources/js/Pages/Dashboard/Inventory/Stocks/Index.vue",
+	"./Dashboard/UserManagement/Index": "./resources/js/Pages/Dashboard/UserManagement/Index.vue",
+	"./Dashboard/UserManagement/Index.vue": "./resources/js/Pages/Dashboard/UserManagement/Index.vue",
 	"./PointOfSales/Index": "./resources/js/Pages/PointOfSales/Index.vue",
 	"./PointOfSales/Index.vue": "./resources/js/Pages/PointOfSales/Index.vue",
 	"./Profile/DeleteUserForm": "./resources/js/Pages/Profile/DeleteUserForm.vue",
@@ -73051,6 +73208,76 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_560b7cd7___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_560b7cd7___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Dashboard/UserManagement/Index.vue":
+/*!***************************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/UserManagement/Index.vue ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Index_vue_vue_type_template_id_6da78075___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Index.vue?vue&type=template&id=6da78075& */ "./resources/js/Pages/Dashboard/UserManagement/Index.vue?vue&type=template&id=6da78075&");
+/* harmony import */ var _Index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Index.vue?vue&type=script&lang=js& */ "./resources/js/Pages/Dashboard/UserManagement/Index.vue?vue&type=script&lang=js&");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Index_vue_vue_type_template_id_6da78075___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Index_vue_vue_type_template_id_6da78075___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Pages/Dashboard/UserManagement/Index.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Dashboard/UserManagement/Index.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/UserManagement/Index.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Index.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard/UserManagement/Index.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Dashboard/UserManagement/Index.vue?vue&type=template&id=6da78075&":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/UserManagement/Index.vue?vue&type=template&id=6da78075& ***!
+  \**********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_6da78075___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Index.vue?vue&type=template&id=6da78075& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Dashboard/UserManagement/Index.vue?vue&type=template&id=6da78075&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_6da78075___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_6da78075___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

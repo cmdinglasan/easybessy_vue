@@ -57,4 +57,9 @@ Route::group(['middleware' => 'auth:sanctum', 'verified'], function () {
 	Route::get('/dashboard/stocks/sort/{id}', [StockController::class, 'sort'])->name('stocks.sort.id');
 	Route::post('/dashboard/stocks/transfer', [StockController::class, 'transfer'])->name('stocks.transfer');
 
+	/* Dashboard - Stocks API */
+	Route::get('/dashboard/branches', [BranchController::class, 'index'])->name('branch.index');
+
+	Route::get('/dashboard/user', [UserController::class, 'index'])->name('user.index');
+
 });

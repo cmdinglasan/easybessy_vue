@@ -75,17 +75,17 @@
 					<div class="transition-all duration-500" v-if="filter == 'Branch'">
 						<div class="relative flex gap-4">
 							<div class="relative w-64">
-								<h4 class="text-xs text-gray-500 font-bold mb-4">Branches</h4>
+								<h4 class="text-xs dark:text-white font-bold mb-4">Branches</h4>
 								<ol>
 									<li class="mb-3">
-										<button type="button" @click="sortAll()" class="border-l-2 pl-4 outline-none foucs:outline-none" :class="branchFilter == 'All' ? 'border-blue-500' : 'border-transparent'">
+										<button type="button" @click="sortAll()" class="dark:text-white border-l-2 pl-4 outline-none foucs:outline-none" :class="branchFilter == 'All' ? 'border-blue-500' : 'border-transparent'">
 											<span class="font-bold">
 												All Branches
 											</span>
 										</button>
 									</li>
 									<li v-for="branch in branches" class="mb-3">
-										<button type="button" @click="sortItem(branch.id)" class="border-l-2 pl-4 outline-none foucs:outline-none" :class="branch.name == branchFilter ? 'border-blue-500' : 'border-transparent'">
+										<button type="button" @click="sortItem(branch.id)" class="dark:text-white border-l-2 pl-4 outline-none foucs:outline-none" :class="branch.name == branchFilter ? 'border-blue-500' : 'border-transparent'">
 											<span class="font-bold">
 												{{ branch.name }}
 											</span>
@@ -124,7 +124,7 @@
 				</transition>
 
 				<transition name="show">
-					<div class="h-screen w-screen bg-gray-200 bg-opacity-50 flex top-0 fixed left-0 scale-100 justify-items-center items-center" v-show="transferModal == true">
+					<div class="h-screen w-screen bg-gray-200 bg-opacity-50 dark:bg-gray-800 flex top-0 fixed left-0 scale-100 justify-items-center items-center" v-show="transferModal == true">
 						<div class="flex-auto">
 							<transition name="modal">
 								<div class="w-full mx-auto rounded-xl shadow-md bg-white scale-100 overflow-hidden" style="max-width: 500px" v-show="transferModal == true">
@@ -187,7 +187,7 @@
 				</transition>
 
 				<transition name="show">
-					<div class="h-screen w-screen bg-gray-200 bg-opacity-50 flex top-0 fixed left-0 scale-100 justify-items-center items-center" v-if="addStock == true">
+					<div class="h-screen w-screen bg-gray-200 bg-opacity-50 dark:bg-gray-800 flex top-0 fixed left-0 scale-100 justify-items-center items-center" v-show="addStock == true">
 						<div class="flex-auto">
 							<transition name="modal">
 								<div class="w-full mx-auto rounded-xl shadow-md bg-white scale-100 overflow-hidden" style="max-width: 500px" v-show="addStock == true">
