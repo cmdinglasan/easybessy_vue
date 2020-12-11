@@ -3868,6 +3868,137 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Chart/Chart.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Chart/Chart.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+!(function webpackMissingModule() { var e = new Error("Cannot find module 'vue-apexcharts'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+var sparklineData = [47, 45, 54, 38, 56, 24, 65, 31, 37, 39, 62, 51, 35, 41, 35, 27, 93, 53, 61, 27, 54, 43, 19, 46];
+
+var randomizeArray = function randomizeArray(arg) {
+  var array = arg.slice();
+  var currentIndex = array.length,
+      temporaryValue,
+      randomIndex;
+
+  while (0 !== currentIndex) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "Chart",
+  components: {
+    apexcharts: !(function webpackMissingModule() { var e = new Error("Cannot find module 'vue-apexcharts'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())
+  },
+  data: function data() {
+    return {
+      chartOptions: {
+        chart: {
+          id: "basic-bar"
+        },
+        xaxis: {
+          categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998]
+        }
+      },
+      series: [{
+        name: "series-1",
+        data: randomizeArray(sparklineData)
+      }],
+      series1: [45, 55, 41, 17, 15],
+      chartOption: {
+        labels: ['Apple', 'Mango', 'Orange', 'Watermelon', 'Banana']
+      },
+      price: [{
+        name: "sales",
+        data: randomizeArray(sparklineData)
+      }]
+    };
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/EBSidebar.vue?vue&type=script&lang=js&":
 /*!********************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Components/EBSidebar.vue?vue&type=script&lang=js& ***!
@@ -5869,8 +6000,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layouts_DashLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Layouts/DashLayout */ "./resources/js/Layouts/DashLayout.vue");
-//
-//
+/* harmony import */ var _Chart_Chart__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Chart/Chart */ "./resources/js/Chart/Chart.vue");
 //
 //
 //
@@ -5885,9 +6015,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    DashLayout: _Layouts_DashLayout__WEBPACK_IMPORTED_MODULE_0__["default"]
+    DashLayout: _Layouts_DashLayout__WEBPACK_IMPORTED_MODULE_0__["default"],
+    Chart: _Chart_Chart__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 });
 
@@ -48160,6 +48292,164 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Chart/Chart.vue?vue&type=template&id=79076ec2&":
+/*!***************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Chart/Chart.vue?vue&type=template&id=79076ec2& ***!
+  \***************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "mx-10 pt-15 " }, [
+    _c("div", { staticClass: "grid gap-6 mb-8 md:grid-cols-2 ml-24" }, [
+      _c(
+        "div",
+        {
+          staticClass:
+            "min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800"
+        },
+        [
+          _c(
+            "h4",
+            {
+              staticClass: "mb-4 font-semibold text-gray-600 dark:text-gray-300"
+            },
+            [_vm._v("\n                Revenue\n            ")]
+          ),
+          _vm._v(" "),
+          _c(
+            "p",
+            { staticClass: "text-gray-600 dark:text-gray-400" },
+            [
+              _c("apexcharts", {
+                attrs: {
+                  width: "500",
+                  type: "line",
+                  options: _vm.chartOptions,
+                  series: _vm.series
+                }
+              })
+            ],
+            1
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass:
+            "min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800"
+        },
+        [
+          _c(
+            "h4",
+            {
+              staticClass: "mb-4 font-semibold text-gray-600 dark:text-gray-300"
+            },
+            [_vm._v("\n                Revenue\n            ")]
+          ),
+          _vm._v(" "),
+          _c(
+            "p",
+            { staticClass: "text-gray-600 dark:text-gray-400" },
+            [
+              _c("apexcharts", {
+                attrs: {
+                  width: "500",
+                  type: "area",
+                  options: _vm.chartOptions,
+                  series: _vm.series
+                }
+              })
+            ],
+            1
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass:
+            "min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800"
+        },
+        [
+          _c(
+            "h4",
+            {
+              staticClass: "mb-4 font-semibold text-gray-600 dark:text-gray-300"
+            },
+            [_vm._v("\n                Revenue\n            ")]
+          ),
+          _vm._v(" "),
+          _c(
+            "p",
+            { staticClass: "text-gray-600 dark:text-gray-400" },
+            [
+              _c("apexcharts", {
+                attrs: {
+                  width: "500",
+                  type: "bar",
+                  options: _vm.chartOptions,
+                  series: _vm.series
+                }
+              })
+            ],
+            1
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass:
+            "min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800"
+        },
+        [
+          _c(
+            "h4",
+            {
+              staticClass: "mb-4 font-semibold text-gray-600 dark:text-gray-300"
+            },
+            [_vm._v("\n                Revenue\n            ")]
+          ),
+          _vm._v(" "),
+          _c(
+            "p",
+            { staticClass: "text-gray-600 dark:text-gray-400" },
+            [
+              _c("apexcharts", {
+                attrs: {
+                  width: "500",
+                  type: "pie",
+                  options: _vm.chartOption,
+                  series: _vm.series1
+                }
+              })
+            ],
+            1
+          )
+        ]
+      )
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/EBSidebar.vue?vue&type=template&id=0df5a6e4&":
 /*!************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Components/EBSidebar.vue?vue&type=template&id=0df5a6e4& ***!
@@ -52572,14 +52862,16 @@ var render = function() {
       {
         key: "header",
         fn: function() {
-          return [_vm._v("\n\t\tOverview\n\t")]
+          return [
+            _c("h1", { staticClass: "text-center" }, [_vm._v("Overview")])
+          ]
         },
         proxy: true
       },
       {
         key: "content",
         fn: function() {
-          return [_vm._v("\n\t\tTest\n\t")]
+          return [_c("Chart")]
         },
         proxy: true
       }
@@ -70010,6 +70302,75 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/js/Chart/Chart.vue":
+/*!**************************************!*\
+  !*** ./resources/js/Chart/Chart.vue ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Chart_vue_vue_type_template_id_79076ec2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Chart.vue?vue&type=template&id=79076ec2& */ "./resources/js/Chart/Chart.vue?vue&type=template&id=79076ec2&");
+/* harmony import */ var _Chart_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Chart.vue?vue&type=script&lang=js& */ "./resources/js/Chart/Chart.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Chart_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Chart_vue_vue_type_template_id_79076ec2___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Chart_vue_vue_type_template_id_79076ec2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Chart/Chart.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Chart/Chart.vue?vue&type=script&lang=js&":
+/*!***************************************************************!*\
+  !*** ./resources/js/Chart/Chart.vue?vue&type=script&lang=js& ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Chart_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Chart.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Chart/Chart.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Chart_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/Chart/Chart.vue?vue&type=template&id=79076ec2&":
+/*!*********************************************************************!*\
+  !*** ./resources/js/Chart/Chart.vue?vue&type=template&id=79076ec2& ***!
+  \*********************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Chart_vue_vue_type_template_id_79076ec2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Chart.vue?vue&type=template&id=79076ec2& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Chart/Chart.vue?vue&type=template&id=79076ec2&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Chart_vue_vue_type_template_id_79076ec2___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Chart_vue_vue_type_template_id_79076ec2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/Components/EBSidebar.vue":
 /*!***********************************************!*\
   !*** ./resources/js/Components/EBSidebar.vue ***!
@@ -72857,9 +73218,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var laravel_jetstream__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(laravel_jetstream__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var portal_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! portal-vue */ "./node_modules/portal-vue/dist/portal-vue.common.js");
 /* harmony import */ var portal_vue__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(portal_vue__WEBPACK_IMPORTED_MODULE_5__);
+!(function webpackMissingModule() { var e = new Error("Cannot find module 'vue-apexcharts'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+
 
 
 
@@ -72876,6 +73239,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.mixin({
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(_inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_3__["InertiaApp"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(laravel_jetstream__WEBPACK_IMPORTED_MODULE_4__["InertiaForm"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(portal_vue__WEBPACK_IMPORTED_MODULE_5___default.a);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(!(function webpackMissingModule() { var e = new Error("Cannot find module 'vue-apexcharts'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 var app = document.getElementById('app');
 new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   render: function render(h) {
