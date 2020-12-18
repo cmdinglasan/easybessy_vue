@@ -92,7 +92,7 @@
 										<button type="button" class="py-1 h-10 w-10 text-center focus:outline-none hover:bg-blue-600 rounded-md border-blue-300 bg-blue-500">
 											<i class="material-icons leading-7 text-sm text-white">edit</i>
 										</button>
-										<button type="button" class="py-1 h-10 w-10 text-center focus:outline-none hover:bg-red-600 rounded-md border-red-300 bg-red-500">
+										<button @click="deleteProduct(product)" type="button" class="py-1 h-10 w-10 text-center focus:outline-none hover:bg-red-600 rounded-md border-red-300 bg-red-500">
 											<i class="material-icons leading-7 text-sm text-white">delete</i>
 										</button>
 									</div>
@@ -129,7 +129,7 @@
 											</div>
 											<div class="mt-4">
 												<label for="category" class="font-bold mb-4 block">Category</label>
-												<select name="category" id="category"v-model="form.category_id" class="px-3 py-2 w-full border-2 border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 transition-colors" placeholder="Product Name">
+												<select name="category" id="category" v-model="form.category_id" class="px-3 py-2 w-full border-2 border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 transition-colors" placeholder="Product Name">
 													<option v-for="category in categories" :key="category.id" :value="category.id">{{ category.name }}</option>
 												</select>
 											</div>
@@ -212,6 +212,12 @@
 					.then((response) => {
              		console.log(this.$inertia.page) });
 				this.createModal = false;
+			},
+			deleteProduct(data){
+				this.$inertia.post("/dashboard/products/delete/" + data.id)
+					.then((response) => {
+						console.log(this.$inertia.page)});
+					
 			},
 			resetForm() {
 				this.form.name = null;

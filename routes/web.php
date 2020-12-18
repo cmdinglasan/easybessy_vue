@@ -44,6 +44,7 @@ Route::group(['middleware' => 'auth:sanctum', 'verified'], function () {
 	/* Dashboard - Products API */
 	Route::get('/dashboard/products', [ProductController::class, 'index'])->name('product.index');
 	Route::post('/dashboard/products', [ProductController::class, 'store'])->name('product.store');
+	Route::post('/dashboard/products/delete/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
 	Route::get('/pos/cart', [CartController::class, 'index'])->name('cart.index');
 	Route::post('/pos/cart', [CartController::class, 'store'])->name('cart.store');
 	Route::post('/pos/cart/delete', [CartController::class, 'destroy'])->name('cart.destroy');

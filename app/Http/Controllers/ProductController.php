@@ -9,39 +9,48 @@ use Inertia\Inertia;
 
 class ProductController extends Controller
 {
-    
-    public function __invoke(Request $request)
-    {
-    	return Product::orderBy('name')->get();
-    }
 
-    public function index(Request $request)
-    {
-    	$products = Product::orderBy('name')->get();
-    	$productCategories = ProductCategory::orderBy('name')->get();
+	public function __invoke(Request $request)
+	{
+		return Product::orderBy('name')->get();
+	}
 
-    	return Inertia::render('Dashboard/Inventory/Products/Index',[
-    		'products' => $products,
-    		'categories' => $productCategories,
-    	]);
-    }
+	public function index(Request $request)
+	{
+		$products = Product::orderBy('name')->get();
+		$productCategories = ProductCategory::orderBy('name')->get();
 
-    public function store(Request $request)
-    {
+		return Inertia::render('Dashboard/Inventory/Products/Index', [
+			'products' => $products,
+			'categories' => $productCategories,
+		]);
+	}
+
+	public function store(Request $request)
+	{
 		$products = Product::orderBy('name')->get();
 
-    	$request->validate([
-    		'name' => 'required',
-    		'category_id' => 'required',
-    		'price' => 'required',
-    	]);
+		$request->validate([
+			'name' => 'required',
+			'category_id' => 'required',
+			'price' => 'required',
+		]);
 
-    	Product::create([
-    		'name' => $request->name,
-    		'category_id' => $request->category_id,
-    		'price' => $request->price,
-    	]);
+		Product::create([
+			'name' => $request->name,
+			'category_id' => $request->category_id,
+			'price' => $request->price,
+		]);
 
-        return redirect()->back();
-    }
+		return redirect()->back();
+	}
+
+	public function destroy($id)
+	{
+
+		Product::destroy($id);
+		
+		return redirect()->back();
+
+	}
 }
